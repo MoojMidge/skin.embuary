@@ -148,7 +148,7 @@
 					<onright>noop</onright>
 					<ondown>1001</ondown>
 					<pagecontrol>60</pagecontrol>
-					<scrolltime>200</scrolltime>
+					<include>ScrollTime</include>
 					<itemgap>0</itemgap>
 					<onback>1100</onback>
 				</control>

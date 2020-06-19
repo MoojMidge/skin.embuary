@@ -21,10 +21,13 @@
 		</definition>
 	</include>
 	<include name="ScrollTime">
-		<scrolltime tween="sine" easing="inout">200</scrolltime>
+		<scrolltime tween="cubic" easing="out">450</scrolltime>
 	</include>
 	<include name="ScrollTimeWidgets">
-		<scrolltime tween="linear" easing="inout">200</scrolltime>
+		<scrolltime tween="cubic" easing="out">450</scrolltime>
+	</include>
+	<include name="ScrollTimeWideWidgets">
+		<scrolltime tween="cubic" easing="out">855</scrolltime>
 	</include>
 	<include name="FullscreenDimensions">
 		<width>1920</width>
@@ -190,11 +193,11 @@
 				<pauseatend>10000</pauseatend>
 				<randomize>true</randomize>
 			</control>
-			<control type="videowindow">
-				<description>Workaround for Leia bug / video sound stuttering</description>
-				<include>HiddenObject</include>
-				<visible>Player.HasVideo + Skin.HasSetting(HideBackgroundPlayback)</visible>
-			</control>
+			<!-- <control type="videowindow"> -->
+				<!-- <description>Workaround for Leia bug / video sound stuttering</description> -->
+				<!-- <include>HiddenObject</include> -->
+				<!-- <visible>Player.HasVideo + Skin.HasSetting(HideBackgroundPlayback)</visible> -->
+			<!-- </control> -->
 			<!-- plain color -->
 			<include>PlainBackground</include>
 			<!-- background -->
@@ -229,7 +232,16 @@
 							<texture>common/white.jpg</texture>
 							<colordiffuse>ff000000</colordiffuse>
 							<animation effect="fade" start="100" end="30" time="0" condition="true">Conditional</animation>
-							<visible>Skin.HasSetting(BlurEnabled) + !String.IsEmpty(Window(home).Property(listitem_blurred))</visible>
+							<visible>Skin.HasSetting(BlurEnabled) + !String.IsEmpty(Window(home).Property(listitem_blurred)) + !Control.HasFocus(100002)</visible>
+						</control>
+						<control type="list" id="100002">
+							<include>HiddenObject</include>
+							<onback>6673</onback>
+							<onup>6673</onup>
+							<ondown>6673</ondown>
+							<onleft>900</onleft>
+							<onclick>Info</onclick>
+							<content limit="1">plugin://script.embuary.helper/?info=getbydbid&amp;$VAR[BackgroundPath]</content>
 						</control>
 					</control>
 				</control>
@@ -238,6 +250,7 @@
 			<control type="group">
 				<animation effect="fade" start="100" end="80" time="0" condition="$EXP[BlurVignette] + [!$EXP[HideBackground] | $PARAM[forced_visible]]">Conditional</animation>
 				<control type="image">
+					<visible>!Control.HasFocus(100002)</visible>
 					<include>FullscreenDimensions</include>
 					<texture>special://skin/extras/themes/$VAR[SkinTheme]/background.jpg</texture>
 					<animation effect="fade" start="100" end="90" time="0" condition="String.IsEqual(Skin.String(BackgroundOpacity),darkest)">Conditional</animation>
@@ -252,6 +265,7 @@
 				<animation effect="fade" start="100" end="80" time="0" condition="$EXP[BlurVignette] + [!$EXP[HideBackground] | $PARAM[forced_visible]]">Conditional</animation>
 				<!-- no vignette for windows without background image in default skin -->
 				<control type="image">
+					<visible>!Control.HasFocus(100002)</visible>
 					<visible>$EXP[IsDefaultSkin]</visible>
 					<visible>!$EXP[HideBackground] | $PARAM[forced_visible]</visible>
 					<visible>
@@ -264,6 +278,7 @@
 				</control>
 				<!-- always show vignette for all other skins -->
 				<control type="image">
+					<visible>!Control.HasFocus(100002)</visible>
 					<visible>!$EXP[IsDefaultSkin]</visible>
 					<include>FullscreenDimensions</include>
 					<texture>special://skin/extras/themes/$VAR[SkinTheme]/vignette.png</texture>
@@ -599,7 +614,7 @@
 					<onleft>SetFocus(50)</onleft>
 					<onright condition="Control.IsVisible(17)">17</onright>
 					<onfocus condition="!Skin.HasSetting(MinimalFocusAnimation)">SetProperty(FocusBounce,1,home)</onfocus>
-					<scrolltime>0</scrolltime>
+					<include>ScrollTime</include>
 					<orientation>vertical</orientation>
 					<defaultcontrol>0</defaultcontrol>
 					<itemlayout height="34" width="45">
@@ -666,7 +681,7 @@
 					<onup>100</onup>
 					<ondown>SetFocus(50)</ondown>
 					<onfocus condition="!Skin.HasSetting(MinimalFocusAnimation)">SetProperty(FocusBounce,1,home)</onfocus>
-					<scrolltime>0</scrolltime>
+					<include>ScrollTime</include>
 					<orientation>horizontal</orientation>
 					<defaultcontrol>0</defaultcontrol>
 					<itemlayout height="45" width="34">
@@ -1007,6 +1022,12 @@
 	<include name="ToggleWatchedAction">
 		<onclick condition="String.StartsWith(ListItem.Path,plugin://plugin.video.embycon) + !String.IsEmpty(ListItem.Property(id))">RunScript(plugin.video.embycon,0,?mode=TOGGLE_WATCHED&amp;item_id=$INFO[ListItem.Property(id)])</onclick>
 		<onclick condition="![String.StartsWith(ListItem.Path,plugin://plugin.video.embycon) + !String.IsEmpty(ListItem.Property(id))]">ToggleWatched</onclick>
+	</include>
+	<include name="InfoToggleWatchedAction">
+		<onclick>Dialog.Close(all,true)</onclick>
+		<onclick>ActivateWindow(videos,$INFO[ListItem.DBID,videodb://movies/titles/],return)</onclick>
+		<onclick>ToggleWatched</onclick>
+		<onclick>AlarmClock(openVideoInfo,Action(Info),00:01,silent)</onclick>
 	</include>
 	<include name="SetPropertyOnFocus">
 		<control type="button">

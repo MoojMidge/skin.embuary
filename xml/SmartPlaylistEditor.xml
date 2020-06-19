@@ -46,7 +46,7 @@
 						<onright>10</onright>
 						<ondown>200</ondown>
 						<pagecontrol>70</pagecontrol>
-						<scrolltime>200</scrolltime>
+						<include>ScrollTime</include>
 						<control type="button" id="22">
 							<include>DialogSettingsButton</include>
 							<label>$LOCALIZE[467]</label>
@@ -154,7 +154,7 @@
 						<onright>noop</onright>
 						<ondown>200</ondown>
 						<pagecontrol>60</pagecontrol>
-						<scrolltime>200</scrolltime>
+						<include>ScrollTime</include>
 						<itemlayout height="50" width="800">
 							<control type="label">
 								<right>20</right>

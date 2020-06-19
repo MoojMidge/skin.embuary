@@ -47,7 +47,7 @@
 					<onright>noop</onright>
 					<ondown>100</ondown>
 					<pagecontrol>60</pagecontrol>
-					<scrolltime>200</scrolltime>
+					<include>ScrollTime</include>
 					<itemlayout height="75" width="1720">
 						<control type="image">
 							<height>75</height>

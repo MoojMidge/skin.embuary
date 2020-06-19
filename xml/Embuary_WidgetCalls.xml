@@ -219,7 +219,7 @@
 				<param name="nr" value="$PARAM[nr]"/>
 				<param name="id" value="230"/>
 				<param name="onup" value="229"/>
-				<param name="ondown" value="231"/>
+				<param name="ondown" value="noop"/>
 			</include>
 		</definition>
 	</include>

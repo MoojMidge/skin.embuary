@@ -8,7 +8,7 @@
 		<onright>noop</onright>
 		<ondown>noop</ondown>
 		<pagecontrol>60</pagecontrol>
-		<scrolltime>200</scrolltime>
+		<include>ScrollTime</include>
 		<itemgap>0</itemgap>
 	</include>
 

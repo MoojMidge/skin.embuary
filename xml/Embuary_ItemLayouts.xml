@@ -220,7 +220,7 @@
 		<definition>
 			<control type="group">
 				<visible>$PARAM[visible]</visible>
-				<include content="WidgetLabels">
+				<include content="StaticLabels">
 					<param name="top">367</param>
 					<param name="width">237</param>
 					<param name="id">$PARAM[id]</param>
@@ -239,7 +239,7 @@
 						<left>-2</left>
 						<width>243</width>
 						<height>361</height>
-						<texture border="20,20,20,20">items/shadow.png</texture>
+						<texture background="true">items/inner_shadow.png</texture><aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
 						<left>-12</left>
@@ -250,20 +250,6 @@
 						<aspectratio>stretch</aspectratio>
 						<visible>$PARAM[focused] + Control.HasFocus($PARAM[id])</visible>
 						<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-					</control>
-					<control type="image">
-						<width>237</width>
-						<height>355</height>
-						<texture colordiffuse="$VAR[ThumbFallbackColor]">common/white.jpg</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<visible>[String.IsEmpty(ListItem.Icon) | String.StartsWith(ListItem.Icon,Default)] + String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
-					</control>
-					<control type="image">
-						<width>237</width>
-						<height>355</height>
-						<texture colordiffuse="thumb_background">common/white.jpg</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<visible>[!String.IsEmpty(ListItem.Icon) + !String.StartsWith(ListItem.Icon,Default)] | !String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
 					</control>
 					<control type="textbox">
 						<top>10</top>
@@ -311,7 +297,7 @@
 		<definition>
 			<control type="group">
 				<visible>$PARAM[visible]</visible>
-				<include content="WidgetLabels">
+				<include content="StaticLabels">
 					<param name="top">367</param>
 					<param name="width">237</param>
 					<param name="id">$PARAM[id]</param>
@@ -330,7 +316,7 @@
 						<left>-2</left>
 						<width>243</width>
 						<height>361</height>
-						<texture border="20,20,20,20">items/shadow.png</texture>
+						<texture background="true">items/inner_shadow.png</texture><aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
 						<left>-12</left>
@@ -347,12 +333,6 @@
 						<control type="image">
 							<width>237</width>
 							<height>355</height>
-							<texture colordiffuse="thumb_background_fallback_secondary">common/white.jpg</texture>
-							<aspectratio scalediffuse="false">stretch</aspectratio>
-						</control>
-						<control type="image">
-							<width>237</width>
-							<height>355</height>
 							<texture>DefaultActor.png</texture>
 							<colordiffuse>text_white</colordiffuse>
 							<bordersize>20</bordersize>
@@ -362,16 +342,10 @@
 					<control type="group">
 						<visible>!String.IsEmpty(ListItem.Icon) + !String.StartsWith(ListItem.Icon,Default)</visible>
 						<control type="image">
-							<width>237</width>
-							<height>355</height>
-							<texture colordiffuse="thumb_background">common/white.jpg</texture>
-							<aspectratio scalediffuse="false">stretch</aspectratio>
-						</control>
-						<control type="image">
 							<width>239</width>
 							<height>355</height>
 							<texture diffuse="items/workaround_cast_diffuse.png" background="true">$VAR[IconPoster]</texture>
-							<aspectratio scalediffuse="false">stretch</aspectratio>
+							<aspectratio scalediffuse="false">scale</aspectratio>
 							<visible>!String.StartsWith(ListItem.Icon,Default)</visible>
 						</control>
 					</control>
@@ -398,7 +372,7 @@
 		<definition>
 			<control type="group">
 				<visible>$PARAM[visible]</visible>
-				<include content="WidgetLabels">
+				<include content="StaticLabels">
 					<param name="top">175</param>
 					<param name="width">880</param>
 					<param name="id">$PARAM[id]</param>
@@ -417,7 +391,7 @@
 						<left>-2</left>
 						<width>886</width>
 						<height>169</height>
-						<texture border="20,20,20,20">items/shadow.png</texture>
+						<texture background="true">items/inner_shadow.png</texture><aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
 						<left>-12</left>
@@ -428,20 +402,6 @@
 						<aspectratio>stretch</aspectratio>
 						<visible>$PARAM[focused] + Control.HasFocus($PARAM[id])</visible>
 						<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-					</control>
-					<control type="image">
-						<width>880</width>
-						<height>163</height>
-						<texture colordiffuse="$VAR[ThumbFallbackColor]">common/white.jpg</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<visible>![!String.IsEmpty(ListItem.Art(banner)) | !String.IsEmpty(ListItem.Art(tvshow.banner)) | !String.IsEmpty(ListItem.Art(fanart)) | !String.IsEmpty(ListItem.Art(tvshow.fanart))]</visible>
-					</control>
-					<control type="image">
-						<width>880</width>
-						<height>163</height>
-						<texture colordiffuse="thumb_background">common/white.jpg</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<visible>!String.IsEmpty(ListItem.Art(banner)) | !String.IsEmpty(ListItem.Art(tvshow.banner)) | !String.IsEmpty(ListItem.Art(fanart)) | !String.IsEmpty(ListItem.Art(tvshow.fanart))</visible>
 					</control>
 					<control type="textbox">
 						<top>10</top>
@@ -500,7 +460,7 @@
 		<definition>
 			<control type="group">
 				<visible>$PARAM[visible]</visible>
-				<include content="WidgetLabels">
+				<include content="StaticLabels">
 					<param name="top">254</param>
 					<param name="width">430</param>
 					<param name="id">$PARAM[id]</param>
@@ -519,7 +479,7 @@
 						<left>-2</left>
 						<width>436</width>
 						<height>248</height>
-						<texture border="20,20,20,20">items/shadow.png</texture>
+						<texture background="true">items/inner_shadow.png</texture><aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
 						<left>-12</left>
@@ -530,20 +490,6 @@
 						<aspectratio>stretch</aspectratio>
 						<visible>$PARAM[focused] + Control.HasFocus($PARAM[id])</visible>
 						<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-					</control>
-					<control type="image">
-						<width>430</width>
-						<height>242</height>
-						<texture colordiffuse="$VAR[ThumbFallbackColor]">common/white.jpg</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<visible>String.IsEmpty(ListItem.Icon) | String.StartsWith(ListItem.Icon,Default)</visible>
-					</control>
-					<control type="image">
-						<width>430</width>
-						<height>242</height>
-						<texture colordiffuse="thumb_background">common/white.jpg</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<visible>!String.IsEmpty(ListItem.Icon) + !String.StartsWith(ListItem.Icon,Default)</visible>
 					</control>
 					<control type="textbox">
 						<top>10</top>
@@ -599,7 +545,7 @@
 		<definition>
 			<control type="group">
 				<visible>$PARAM[visible]</visible>
-				<include content="WidgetLabels">
+				<include content="StaticLabels">
 					<param name="top">254</param>
 					<param name="width">430</param>
 					<param name="id">$PARAM[id]</param>
@@ -618,7 +564,7 @@
 						<left>-2</left>
 						<width>436</width>
 						<height>248</height>
-						<texture border="20,20,20,20">items/shadow.png</texture>
+						<texture background="true">items/inner_shadow.png</texture><aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
 						<left>-12</left>
@@ -629,12 +575,6 @@
 						<aspectratio>stretch</aspectratio>
 						<visible>$PARAM[focused] + Control.HasFocus($PARAM[id])</visible>
 						<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-					</control>
-					<control type="image">
-						<width>430</width>
-						<height>242</height>
-						<texture colordiffuse="thumb_background">common/white.jpg</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
 					</control>
 					<control type="gamewindow">
 						<width>430</width>
@@ -656,7 +596,7 @@
 		<definition>
 			<control type="group">
 				<visible>$PARAM[visible]</visible>
-				<include content="WidgetLabels">
+				<include content="StaticLabels">
 					<param name="top">292</param>
 					<param name="width">280</param>
 					<param name="id">$PARAM[id]</param>
@@ -675,7 +615,7 @@
 						<left>-2</left>
 						<width>286</width>
 						<height>286</height>
-						<texture border="20,20,20,20">items/shadow.png</texture>
+						<texture background="true">items/inner_shadow.png</texture><aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
 						<left>-12</left>
@@ -686,12 +626,6 @@
 						<aspectratio>stretch</aspectratio>
 						<visible>$PARAM[focused] + Control.HasFocus($PARAM[id])</visible>
 						<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-					</control>
-					<control type="image">
-						<width>280</width>
-						<height>280</height>
-						<texture colordiffuse="$PARAM[color]">common/white.jpg</texture>
-						<aspectratio>stretch</aspectratio>
 					</control>
 					<control type="textbox">
 						<top>10</top>
@@ -719,7 +653,7 @@
 		<definition>
 			<control type="group">
 				<visible>$PARAM[visible]</visible>
-				<include content="WidgetLabels">
+				<include content="StaticLabels">
 					<param name="top">292</param>
 					<param name="width">280</param>
 					<param name="id">$PARAM[id]</param>
@@ -738,7 +672,7 @@
 						<left>-2</left>
 						<width>286</width>
 						<height>286</height>
-						<texture border="20,20,20,20">items/shadow.png</texture>
+						<texture background="true">items/inner_shadow.png</texture><aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
 						<left>-12</left>
@@ -749,20 +683,6 @@
 						<aspectratio>stretch</aspectratio>
 						<visible>$PARAM[focused] + Control.HasFocus($PARAM[id])</visible>
 						<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-					</control>
-					<control type="image">
-						<width>280</width>
-						<height>280</height>
-						<texture colordiffuse="$VAR[ThumbFallbackColor]">common/white.jpg</texture>
-						<aspectratio>stretch</aspectratio>
-						<visible>String.IsEmpty(ListItem.Icon) | String.StartsWith(ListItem.Icon,Default)</visible>
-					</control>
-					<control type="image">
-						<width>280</width>
-						<height>280</height>
-						<texture colordiffuse="thumb_background">common/white.jpg</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<visible>!String.IsEmpty(ListItem.Icon) + !String.StartsWith(ListItem.Icon,Default)</visible>
 					</control>
 					<control type="textbox">
 						<top>10</top>
@@ -819,7 +739,7 @@
 		<definition>
 			<control type="group">
 				<visible>$PARAM[visible]</visible>
-				<include content="WidgetLabels">
+				<include content="StaticLabels">
 					<param name="top">288</param>
 					<param name="width">276</param>
 					<param name="id">$PARAM[id]</param>
@@ -838,7 +758,7 @@
 						<left>-2</left>
 						<width>282</width>
 						<height>282</height>
-						<texture border="20,20,20,20">items/shadow.png</texture>
+						<texture background="true">items/inner_shadow.png</texture><aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
 						<left>-12</left>
@@ -849,13 +769,6 @@
 						<aspectratio>stretch</aspectratio>
 						<visible>$PARAM[focused] + Control.HasFocus($PARAM[id])</visible>
 						<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-					</control>
-					<control type="image">
-						<width>276</width>
-						<height>276</height>
-						<texture colordiffuse="thumb_background_fallback_secondary">common/white.jpg</texture>
-						<aspectratio>stretch</aspectratio>
-						<visible>String.IsEmpty(ListItem.Icon) | String.StartsWith(ListItem.Icon,Default)</visible>
 					</control>
 					<control type="image">
 						<width>276</width>
@@ -885,7 +798,7 @@
 		<definition>
 			<control type="group">
 				<visible>$PARAM[visible]</visible>
-				<include content="WidgetLabels">
+				<include content="StaticLabels">
 					<param name="top">367</param>
 					<param name="width">237</param>
 					<param name="id">$PARAM[id]</param>
@@ -991,7 +904,7 @@
 	<include name="MainMenuLayout">
 		<param name="focused">false</param>
 		<definition>
-			<include content="WidgetLabels">
+			<include content="StaticLabels">
 				<param name="top">170</param>
 				<param name="width">280</param>
 				<param name="id">$PARAM[id]</param>
@@ -1010,7 +923,7 @@
 					<left>-2</left>
 					<width>286</width>
 					<height>164</height>
-					<texture border="20,20,20,20">items/shadow.png</texture>
+					<texture background="true">items/inner_shadow.png</texture><aspectratio>stretch</aspectratio>
 				</control>
 				<control type="image">
 					<left>-12</left>
@@ -1029,19 +942,6 @@
 						| String.IsEqual(ListItem.Property(useFakeArt),false)
 						| [String.IsEqual(ListItem.Property(useFakeArt),true) + [String.IsEmpty(ListItem.Property(Art1)) | String.IsEmpty(ListItem.Property(Art2)) | String.IsEmpty(ListItem.Property(Art3)) | String.IsEmpty(ListItem.Property(Art4))]]
 					</visible>
-					<control type="image">
-						<width>280</width>
-						<height>158</height>
-						<texture colordiffuse="thumb_background_fallback_secondary">common/white.jpg</texture>
-						<aspectratio>stretch</aspectratio>
-						<visible>String.StartsWith(ListItem.Icon,Default) | String.IsEmpty(ListItem.Icon)</visible>
-					</control>
-					<control type="image">
-						<width>280</width>
-						<height>158</height>
-						<texture colordiffuse="thumb_background">common/white.jpg</texture>
-						<visible>!String.StartsWith(ListItem.Icon,Default) + !String.IsEmpty(ListItem.Icon)</visible>
-					</control>
 					<control type="group">
 						<visible>!String.StartsWith(ListItem.Icon,Default) + !String.IsEmpty(ListItem.Icon)</visible>
 						<control type="image">
@@ -1385,7 +1285,7 @@
 						<left>-2</left>
 						<width>430</width>
 						<height>245</height>
-						<texture border="20,20,20,20">items/shadow.png</texture>
+						<texture background="true">items/inner_shadow.png</texture><aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
 						<left>-12</left>
@@ -1396,20 +1296,6 @@
 						<aspectratio>stretch</aspectratio>
 						<visible>$PARAM[focused] + Control.HasFocus($PARAM[id])</visible>
 						<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-					</control>
-					<control type="image">
-						<width>424</width>
-						<height>239</height>
-						<texture colordiffuse="$VAR[ThumbFallbackColor]">common/white.jpg</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<visible>String.IsEmpty(ListItem.Icon) | String.StartsWith(ListItem.Icon,Default)</visible>
-					</control>
-					<control type="image">
-						<width>424</width>
-						<height>239</height>
-						<texture colordiffuse="thumb_background">common/white.jpg</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<visible>!String.IsEmpty(ListItem.Icon) + !String.StartsWith(ListItem.Icon,Default)</visible>
 					</control>
 					<control type="textbox">
 						<top>10</top>
@@ -1508,7 +1394,7 @@
 		<definition>
 			<control type="group">
 				<visible>$PARAM[visible]</visible>
-				<include content="WidgetLabels">
+				<include content="StaticLabels">
 					<param name="top">292</param>
 					<param name="width">280</param>
 					<param name="id">$PARAM[id]</param>
@@ -1527,7 +1413,7 @@
 						<left>-2</left>
 						<width>286</width>
 						<height>286</height>
-						<texture border="20,20,20,20">items/shadow.png</texture>
+						<texture background="true">items/inner_shadow.png</texture><aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
 						<left>-12</left>
@@ -1538,20 +1424,6 @@
 						<aspectratio>stretch</aspectratio>
 						<visible>$PARAM[focused] + Control.HasFocus($PARAM[id])</visible>
 						<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-					</control>
-					<control type="image">
-						<width>280</width>
-						<height>280</height>
-						<texture colordiffuse="$VAR[ThumbFallbackColor]">common/white.jpg</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<visible>String.IsEmpty(ListItem.Icon) | String.StartsWith(ListItem.Icon,Default)</visible>
-					</control>
-					<control type="image">
-						<width>280</width>
-						<height>280</height>
-						<texture colordiffuse="thumb_background">common/white.jpg</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<visible>!String.IsEmpty(ListItem.Icon) + !String.StartsWith(ListItem.Icon,Default)</visible>
 					</control>
 					<control type="textbox">
 						<top>10</top>
@@ -1808,7 +1680,7 @@
 		<definition>
 			<control type="group">
 				<visible>$PARAM[visible]</visible>
-				<include content="WidgetLabels">
+				<include content="StaticLabels">
 					<param name="top">367</param>
 					<param name="width">237</param>
 					<param name="id">$PARAM[id]</param>
@@ -1827,7 +1699,7 @@
 						<left>-2</left>
 						<width>243</width>
 						<height>361</height>
-						<texture border="20,20,20,20">items/shadow.png</texture>
+						<texture background="true">items/inner_shadow.png</texture><aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
 						<left>-12</left>
@@ -1838,20 +1710,6 @@
 						<aspectratio>stretch</aspectratio>
 						<visible>$PARAM[focused] + Control.HasFocus($PARAM[id])</visible>
 						<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-					</control>
-					<control type="image">
-						<width>237</width>
-						<height>355</height>
-						<texture colordiffuse="$VAR[ThumbFallbackColor]">common/white.jpg</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<visible>String.IsEmpty(ListItem.EpgEventIcon) + [String.StartsWith(ListItem.Icon,Default) | String.IsEmpty(ListItem.Icon)]</visible>
-					</control>
-					<control type="image">
-						<width>237</width>
-						<height>355</height>
-						<texture colordiffuse="thumb_background">common/white.jpg</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<visible>!String.IsEmpty(ListItem.EpgEventIcon) | [!String.IsEmpty(ListItem.Icon) + !String.StartsWith(ListItem.Icon,Default)]</visible>
 					</control>
 					<control type="textbox">
 						<top>10</top>
@@ -1906,7 +1764,7 @@
 		<definition>
 			<control type="group">
 				<visible>$PARAM[visible]</visible>
-				<include content="WidgetLabels">
+				<include content="StaticLabels">
 					<param name="top">254</param>
 					<param name="width">430</param>
 					<param name="id">$PARAM[id]</param>
@@ -1925,7 +1783,7 @@
 						<left>-2</left>
 						<width>436</width>
 						<height>248</height>
-						<texture border="20,20,20,20">items/shadow.png</texture>
+						<texture background="true">items/inner_shadow.png</texture><aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
 						<left>-12</left>
@@ -1936,20 +1794,6 @@
 						<aspectratio>stretch</aspectratio>
 						<visible>$PARAM[focused] + Control.HasFocus($PARAM[id])</visible>
 						<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-					</control>
-					<control type="image">
-						<width>430</width>
-						<height>242</height>
-						<texture colordiffuse="$VAR[ThumbFallbackColor]">common/white.jpg</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<visible>String.IsEmpty(ListItem.EpgEventIcon) + [String.StartsWith(ListItem.Icon,Default) | String.IsEmpty(ListItem.Icon)]</visible>
-					</control>
-					<control type="image">
-						<width>430</width>
-						<height>242</height>
-						<texture colordiffuse="thumb_background">common/white.jpg</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<visible>!String.IsEmpty(ListItem.EpgEventIcon) | [!String.IsEmpty(ListItem.Icon) + !String.StartsWith(ListItem.Icon,Default)]</visible>
 					</control>
 					<control type="textbox">
 						<top>10</top>
@@ -1996,7 +1840,7 @@
 		<definition>
 			<control type="group">
 				<visible>$PARAM[visible]</visible>
-				<include content="WidgetLabels">
+				<include content="StaticLabels">
 					<param name="top">254</param>
 					<param name="width">430</param>
 					<param name="id">$PARAM[id]</param>
@@ -2015,7 +1859,7 @@
 						<left>-2</left>
 						<width>436</width>
 						<height>248</height>
-						<texture border="20,20,20,20">items/shadow.png</texture>
+						<texture background="true">items/inner_shadow.png</texture><aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
 						<left>-12</left>
@@ -2026,20 +1870,6 @@
 						<aspectratio>stretch</aspectratio>
 						<visible>$PARAM[focused] + Control.HasFocus($PARAM[id])</visible>
 						<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-					</control>
-					<control type="image">
-						<width>430</width>
-						<height>242</height>
-						<texture colordiffuse="$VAR[ThumbFallbackColor]">common/white.jpg</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<visible>String.StartsWith(ListItem.Icon,Default) | String.IsEmpty(ListItem.Icon)</visible>
-					</control>
-					<control type="image">
-						<width>430</width>
-						<height>242</height>
-						<texture colordiffuse="thumb_background">common/white.jpg</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<visible>!String.IsEmpty(ListItem.Icon) + !String.StartsWith(ListItem.Icon,Default)</visible>
 					</control>
 					<control type="textbox">
 						<top>10</top>
@@ -2089,7 +1919,7 @@
 		<definition>
 			<control type="group">
 				<visible>$PARAM[visible]</visible>
-				<include content="WidgetLabels">
+				<include content="StaticLabels">
 					<param name="top">239</param>
 					<param name="width">340</param>
 					<param name="id">$PARAM[id]</param>
@@ -2108,7 +1938,7 @@
 						<left>-2</left>
 						<width>346</width>
 						<height>233</height>
-						<texture border="20,20,20,20">items/shadow.png</texture>
+						<texture background="true">items/inner_shadow.png</texture><aspectratio>stretch</aspectratio>
 					</control>
 					<control type="image">
 						<left>-12</left>
@@ -2119,20 +1949,6 @@
 						<aspectratio>stretch</aspectratio>
 						<visible>$PARAM[focused] + Control.HasFocus($PARAM[id])</visible>
 						<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
-					</control>
-					<control type="image">
-						<width>340</width>
-						<height>227</height>
-						<texture colordiffuse="$VAR[ThumbFallbackColor]">common/white.jpg</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<visible>String.IsEmpty(ListItem.EpgEventIcon) + [String.StartsWith(ListItem.Icon,Default) | String.IsEmpty(ListItem.Icon)]</visible>
-					</control>
-					<control type="image">
-						<width>340</width>
-						<height>227</height>
-						<texture colordiffuse="thumb_background">common/white.jpg</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-						<visible>!String.IsEmpty(ListItem.EpgEventIcon) | [!String.IsEmpty(ListItem.Icon) + !String.StartsWith(ListItem.Icon,Default)]</visible>
 					</control>
 					<control type="textbox">
 						<top>10</top>

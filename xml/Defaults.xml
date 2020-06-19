@@ -164,16 +164,16 @@
 		<pulseonselect>no</pulseonselect>
 	</default>
 	<default type="list">
-		<scrolltime>200</scrolltime>
+		<include>ScrollTime</include>
 	</default>
 	<default type="fixedlist">
-		<scrolltime>200</scrolltime>
+		<include>ScrollTime</include>
 	</default>
 	<default type="panel">
-		<scrolltime>200</scrolltime>
+		<include>ScrollTime</include>
 	</default>
 	<default type="wraplist">
-		<scrolltime>200</scrolltime>
+		<include>ScrollTime</include>
 	</default>
 	<default type="grouplist">
 		<itemgap>0</itemgap>

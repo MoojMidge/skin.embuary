@@ -2,18 +2,8 @@
 <window>
 	<defaultcontrol always="true">100</defaultcontrol>
 	<onload condition="$EXP[AutoCloseInfoDialog]">close</onload>
-	<onload condition="!$EXP[AutoCloseInfoDialog]">Control.Move(200,$INFO[Container(200).CurrentItem,-])</onload>
-	<onload condition="!$EXP[AutoCloseInfoDialog]">Control.Move(200,1)</onload>
-	<onload condition="!$EXP[AutoCloseInfoDialog]">Control.Move(201,$INFO[Container(201).CurrentItem,-])</onload>
-	<onload condition="!$EXP[AutoCloseInfoDialog]">Control.Move(201,1)</onload>
-	<onload condition="!$EXP[AutoCloseInfoDialog]">Control.Move(202,$INFO[Container(202).CurrentItem,-])</onload>
-	<onload condition="!$EXP[AutoCloseInfoDialog]">Control.Move(202,1)</onload>
-	<onload condition="!$EXP[AutoCloseInfoDialog]">Control.Move(203,$INFO[Container(203).CurrentItem,-])</onload>
-	<onload condition="!$EXP[AutoCloseInfoDialog]">Control.Move(203,1)</onload>
-	<onload condition="!$EXP[AutoCloseInfoDialog]">Control.Move(204,$INFO[Container(204).CurrentItem,-])</onload>
-	<onload condition="!$EXP[AutoCloseInfoDialog]">Control.Move(204,1)</onload>
-	<onload condition="!$EXP[AutoCloseInfoDialog]">Control.Move(205,$INFO[Container(205).CurrentItem,-])</onload>
-	<onload condition="!$EXP[AutoCloseInfoDialog]">Control.Move(205,1)</onload>
+	<onload>AlarmClock(RefreshInfoDialog,RunScript(script.embuary.helper,action=refreshinfodialog),00:00,silent)</onload>
+	<onunload condition="System.HasAlarm(RefreshInfoDialog)">CancelAlarm(RefreshInfoDialog,silent)</onunload>
 	<include>PropertyIncludes</include>
 	<controls>
 		<control type="button" id="8">

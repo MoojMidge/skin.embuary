@@ -308,7 +308,7 @@
 				<visible>$PARAM[focused] + Control.HasFocus($PARAM[id])</visible>
 				<include>Animation_FocusTextureFade</include>
 				<control type="image">
-					<texture>items/inner_shadow.png</texture>
+					<texture background="true">items/inner_shadow.png</texture>
 					<aspectratio>stretch</aspectratio>
 				</control>
 				<control type="group">
@@ -319,7 +319,7 @@
 						<centertop>50%</centertop>
 						<width>70</width>
 						<height>70</height>
-						<texture>items/icon_play.png</texture>
+						<texture background="true">items/icon_play.png</texture>
 						<visible>![[String.IsEqual(ListItem.Property(IsFolder),true) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,artist) | ListItem.IsFolder] + !String.IsEqual(ListItem.DBType,album)]</visible>
 					</control>
 					<control type="image">
@@ -327,7 +327,7 @@
 						<centertop>50%</centertop>
 						<width>70</width>
 						<height>70</height>
-						<texture>items/icon_folder.png</texture>
+						<texture background="true">items/icon_folder.png</texture>
 						<visible>[String.IsEqual(ListItem.Property(IsFolder),true) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,artist) | ListItem.IsFolder] + !String.IsEqual(ListItem.DBType,album)</visible>
 					</control>
 				</control>
@@ -351,7 +351,7 @@
 					<width>50</width>
 					<aspectratio>stretch</aspectratio>
 					<colordiffuse>d6ffffff</colordiffuse>
-					<texture flipx="true">common/page_indicator.png</texture>
+					<texture flipx="true" background="true">common/page_indicator.png</texture>
 				</control>
 				<control type="label">
 					<top>-1</top>
@@ -375,7 +375,7 @@
 					<width>50</width>
 					<aspectratio>stretch</aspectratio>
 					<colordiffuse>d6ffffff</colordiffuse>
-					<texture>common/page_indicator.png</texture>
+					<texture background="true">common/page_indicator.png</texture>
 				</control>
 				<control type="label">
 					<top>-1</top>

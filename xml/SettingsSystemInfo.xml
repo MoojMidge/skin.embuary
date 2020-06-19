@@ -141,7 +141,7 @@
 				<onleft>noop</onleft>
 				<onright>noop</onright>
 				<ondown>noop</ondown>
-				<scrolltime>200</scrolltime>
+				<include>ScrollTime</include>
 				<itemgap>0</itemgap>
 				<include content="SkinSettingsHeadlineLabel">
 					<param name="id" value="40"/>

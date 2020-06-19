@@ -73,7 +73,7 @@
 						<top>5</top>
 						<height>50</height>
 						<width>$PARAM[width]</width>
-						<scrolltime>0</scrolltime>
+						<include>ScrollTime</include>
 						<onup>noop</onup>
 						<onfocus condition="String.IsEmpty(Window(home).Property(SideBarReset)) + !Integer.IsEqual(Container(901).CurrentItem,1)">Control.Move(901,$INFO[Container(901).CurrentItem,-])</onfocus>
 						<onfocus condition="String.IsEmpty(Window(home).Property(SideBarReset)) + !Integer.IsEqual(Container(901).CurrentItem,1)">Control.Move(901,1)</onfocus>
@@ -140,7 +140,7 @@
 							</include>
 							<height>700</height>
 							<width>$PARAM[width]</width>
-							<scrolltime>200</scrolltime>
+							<include>ScrollTime</include>
 							<onup>SetFocus(900)</onup>
 							<ondown>SetFocus(902,0)</ondown>
 							<onright>ClearProperty(SideBarReset,home)</onright>
@@ -195,7 +195,7 @@
 							</include>
 							<height>200</height>
 							<width>$PARAM[width]</width>
-							<scrolltime>0</scrolltime>
+							<include>ScrollTime</include>
 							<ondown>900</ondown>
 							<onright>ClearProperty(SideBarReset,home)</onright>
 							<onback>ClearProperty(SideBarReset,home)</onback>

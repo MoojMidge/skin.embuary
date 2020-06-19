@@ -5,7 +5,7 @@
 	<onload condition="!String.IsEqual(Control.GetLabel(1002),$LOCALIZE[12021]) + Control.IsVisible(1999)">SetFocus(1999)</onload>
 	<onload condition="!String.IsEqual(Control.GetLabel(1002),$LOCALIZE[12021]) + !Control.IsVisible(1999) + Control.IsVisible(1998)">SetFocus(1998)</onload>
 	<onload condition="!String.IsEqual(Control.GetLabel(1002),$LOCALIZE[12021]) + !Control.IsVisible(1999) + !Control.IsVisible(1998) + Control.IsVisible(1997)">SetFocus(1997)</onload>
-	<onload condition="!String.IsEqual(Control.GetLabel(1002),$LOCALIZE[12021]) + !Control.IsVisible(1999) + !Control.IsVisible(1998) + !Control.IsVisible(1997) + Control.IsVisible(1996)">SetFocus(1996)</onload>
+	<onload condition="!String.IsEqual(Control.GetLabel(1002),$LOCALIZE[12021]) + !String.IsEqual(Control.GetLabel(1001),$LOCALIZE[208]) + !Control.IsVisible(1999) + !Control.IsVisible(1998) + !Control.IsVisible(1997) + Control.IsVisible(1996)">SetFocus(1996)</onload>
 	<controls>
 		<include content="DiffuseMask"/>
 		<control type="group">

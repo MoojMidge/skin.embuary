@@ -83,7 +83,7 @@
 				<onleft>100</onleft>
 				<onright>300</onright>
 				<orientation>vertical</orientation>
-				<scrolltime tween="quadratic" easing="out">200</scrolltime>
+				<include>ScrollTime</include>
 				<itemlayout height="35" width="1188">
 					<control type="label">
 						<width>1188</width>

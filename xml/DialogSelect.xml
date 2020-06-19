@@ -20,7 +20,7 @@
 					<onleft>100</onleft>
 					<onright>100</onright>
 					<ondown>100</ondown>
-					<scrolltime>0</scrolltime>
+					<include>ScrollTime</include>
 					<itemlayout height="50"/>
 					<focusedlayout height="50"/>
 				</control>
@@ -215,7 +215,7 @@
 							<onright condition="!Integer.IsGreater(Numitems,6)">200</onright>
 							<ondown>200</ondown>
 							<pagecontrol>60</pagecontrol>
-							<scrolltime>200</scrolltime>
+							<include>ScrollTime</include>
 							<itemlayout height="75" width="1000">
 								<control type="image">
 									<height>75</height>

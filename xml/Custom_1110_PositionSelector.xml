@@ -56,7 +56,7 @@
 						<onright>101</onright>
 						<ondown>101</ondown>
 						<pagecontrol>60</pagecontrol>
-						<scrolltime>200</scrolltime>
+						<include>ScrollTime</include>
 						<itemlayout height="75" width="900">
 							<control type="label">
 								<right>220</right>

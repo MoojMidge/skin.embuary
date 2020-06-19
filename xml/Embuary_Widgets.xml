@@ -64,6 +64,7 @@
 		<param name="sublabel">$VAR[SubListLabel]</param>
 		<param name="use_custom_content">true</param>
 		<param name="use_custom_onclick">false</param>
+		<param name="beforeclick">false</param>
 		<param name="height">453</param>
 		<param name="force_visible">false</param>
 		<param name="layout">4to3Layout</param>
@@ -87,6 +88,24 @@
 					<param name="focus_width" value="364"/>
 					<param name="focus_height" value="251"/>
 				</include>
+				<control type="button" id="10$PARAM[id]01">
+					<include>HiddenObject</include>
+					<onfocus>SetFocus($PARAM[id])</onfocus>
+					<onfocus>$PARAM[onclick]</onfocus>
+					<onfocus>$PARAM[onclick2]</onfocus>
+					<onfocus>$PARAM[onclick3]</onfocus>
+					<onfocus>$PARAM[onclick4]</onfocus>
+					<onfocus>$PARAM[onclick5]</onfocus>
+					<onfocus>$PARAM[onclick6]</onfocus>
+					<onfocus>$PARAM[onclick7]</onfocus>
+					<onfocus>$PARAM[onclick8]</onfocus>
+					<onfocus>$PARAM[onclick9]</onfocus>
+					<onfocus>$PARAM[onclick10]</onfocus>
+					<onfocus condition="$PARAM[beforeclick]">Action(Select)</onfocus>
+					<onfocus>AlarmClock(clearClickHander,ClearProperty(clickHandler,home),00:01,silent)</onfocus>
+					<ondown>$PARAM[ondown]</ondown>
+					<onup>$PARAM[onup]</onup>
+				</control>
 				<control type="fixedlist" id="$PARAM[id]">
 					<visible>$PARAM[content_visible]</visible>
 					<include>FocusBounce</include>
@@ -105,18 +124,8 @@
 					<onright>SetProperty(BounceRight,1,home)</onright>
 					<onright>noop</onright>
 					<onleft>900</onleft>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick2]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick3]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick4]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick5]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick6]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick7]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick8]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick9]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick10]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick11]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick12]</onclick>
+					<onclick condition="$PARAM[use_custom_onclick] + String.IsEmpty(Window(home).Property(clickHandler))">SetFocus(10$PARAM[id]01)</onclick>
+					<onclick condition="$PARAM[use_custom_onclick] + String.IsEmpty(Window(home).Property(clickHandler))">SetProperty(clickHandler,1,home)</onclick>
 					<pagecontrol>$PARAM[id]1</pagecontrol>
 					<viewtype label="$PARAM[list_name]">list</viewtype>
 					<itemlayout width="360">
@@ -184,6 +193,7 @@
 		<param name="sublabel">$VAR[SubListLabel]</param>
 		<param name="use_custom_content">true</param>
 		<param name="use_custom_onclick">false</param>
+		<param name="beforeclick">false</param>
 		<param name="height">468</param>
 		<param name="force_visible">false</param>
 		<param name="property_button">true</param>
@@ -208,13 +218,31 @@
 					<param name="focus_width" value="454"/>
 					<param name="focus_height" value="266"/>
 				</include>
+				<control type="button" id="10$PARAM[id]01">
+					<include>HiddenObject</include>
+					<onfocus>SetFocus($PARAM[id])</onfocus>
+					<onfocus>$PARAM[onclick]</onfocus>
+					<onfocus>$PARAM[onclick2]</onfocus>
+					<onfocus>$PARAM[onclick3]</onfocus>
+					<onfocus>$PARAM[onclick4]</onfocus>
+					<onfocus>$PARAM[onclick5]</onfocus>
+					<onfocus>$PARAM[onclick6]</onfocus>
+					<onfocus>$PARAM[onclick7]</onfocus>
+					<onfocus>$PARAM[onclick8]</onfocus>
+					<onfocus>$PARAM[onclick9]</onfocus>
+					<onfocus>$PARAM[onclick10]</onfocus>
+					<onfocus condition="$PARAM[beforeclick]">Action(Select)</onfocus>
+					<onfocus>AlarmClock(clearClickHander,ClearProperty(clickHandler,home),00:01,silent)</onfocus>
+					<ondown>$PARAM[ondown]</ondown>
+					<onup>$PARAM[onup]</onup>
+				</control>
 				<control type="fixedlist" id="$PARAM[id]">
 					<visible>$PARAM[content_visible]</visible>
 					<include>FocusBounce</include>
 					<movement>3</movement>
 					<top>30</top>
 					<width>100%</width>
-					<include>ScrollTimeWidgets</include>
+					<include>ScrollTimeWideWidgets</include>
 					<orientation>horizontal</orientation>
 					<preloaditems>4</preloaditems>
 					<ondown>$PARAM[ondown]</ondown>
@@ -227,18 +255,8 @@
 					<onright>noop</onright>
 					<onleft>900</onleft>
 					<onclick condition="!$PARAM[use_custom_onclick] + [[!Window.IsMedia + !$EXP[InfoDialogActive]] | Window.IsVisible(1115)] + $EXP[ForceCinemaMode] + !String.IsEmpty(ListItem.DBID) + !Integer.IsGreater(ListItem.PercentPlayed,0) + [[String.IsEqual(ListItem.DBType,episode) + !String.IsEqual(Skin.String(CinemaModeFor),movies)] | [String.IsEqual(ListItem.DBType,movie) + !String.IsEqual(Skin.String(CinemaModeFor),episodes)]]">RunScript(script.embuary.helper,action=playcinema)</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick2]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick3]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick4]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick5]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick6]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick7]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick8]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick9]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick10]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick11]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick12]</onclick>
+					<onclick condition="$PARAM[use_custom_onclick] + String.IsEmpty(Window(home).Property(clickHandler))">SetFocus(10$PARAM[id]01)</onclick>
+					<onclick condition="$PARAM[use_custom_onclick] + String.IsEmpty(Window(home).Property(clickHandler))">SetProperty(clickHandler,1,home)</onclick>
 					<pagecontrol>$PARAM[id]1</pagecontrol>
 					<viewtype label="$PARAM[list_name]">list</viewtype>
 					<itemlayout width="450">
@@ -309,6 +327,7 @@
 		<param name="sublabel">$VAR[SubListLabel]</param>
 		<param name="use_custom_content">true</param>
 		<param name="use_custom_onclick">false</param>
+		<param name="beforeclick">false</param>
 		<param name="height">581</param>
 		<param name="layout">PosterLayout</param>
 		<param name="property_button">true</param>
@@ -333,6 +352,24 @@
 					<param name="focus_width" value="261"/>
 					<param name="focus_height" value="379"/>
 				</include>
+				<control type="button" id="10$PARAM[id]01">
+					<include>HiddenObject</include>
+					<onfocus>SetFocus($PARAM[id])</onfocus>
+					<onfocus>$PARAM[onclick]</onfocus>
+					<onfocus>$PARAM[onclick2]</onfocus>
+					<onfocus>$PARAM[onclick3]</onfocus>
+					<onfocus>$PARAM[onclick4]</onfocus>
+					<onfocus>$PARAM[onclick5]</onfocus>
+					<onfocus>$PARAM[onclick6]</onfocus>
+					<onfocus>$PARAM[onclick7]</onfocus>
+					<onfocus>$PARAM[onclick8]</onfocus>
+					<onfocus>$PARAM[onclick9]</onfocus>
+					<onfocus>$PARAM[onclick10]</onfocus>
+					<onfocus condition="$PARAM[beforeclick]">Action(Select)</onfocus>
+					<onfocus>AlarmClock(clearClickHander,ClearProperty(clickHandler,home),00:01,silent)</onfocus>
+					<ondown>$PARAM[ondown]</ondown>
+					<onup>$PARAM[onup]</onup>
+				</control>
 				<control type="fixedlist" id="$PARAM[id]">
 					<visible>$PARAM[content_visible]</visible>
 					<include>FocusBounce</include>
@@ -352,18 +389,8 @@
 					<onleft>900</onleft>
 					<oninfo condition="String.IsEqual(ListItem.DBType,set) + !String.IsEmpty(Container(2001).ListItem.Label)">RunScript(script.embuary.helper,action=textviewer,header='$ESCINFO[ListItem.Title]',message='$ESCVAR[ListViewPlot]')</oninfo>
 					<onclick condition="!$PARAM[use_custom_onclick] + [[!Window.IsMedia + !$EXP[InfoDialogActive]] | Window.IsVisible(1115)] + $EXP[ForceCinemaMode] + !String.IsEmpty(ListItem.DBID) + !Integer.IsGreater(ListItem.PercentPlayed,0) + [[String.IsEqual(ListItem.DBType,episode) + !String.IsEqual(Skin.String(CinemaModeFor),movies)] | [String.IsEqual(ListItem.DBType,movie) + !String.IsEqual(Skin.String(CinemaModeFor),episodes)]]">RunScript(script.embuary.helper,action=playcinema)</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick2]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick3]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick4]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick5]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick6]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick7]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick8]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick9]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick10]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick11]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick12]</onclick>
+					<onclick condition="$PARAM[use_custom_onclick] + String.IsEmpty(Window(home).Property(clickHandler))">SetFocus(10$PARAM[id]01)</onclick>
+					<onclick condition="$PARAM[use_custom_onclick] + String.IsEmpty(Window(home).Property(clickHandler))">SetProperty(clickHandler,1,home)</onclick>
 					<pagecontrol>$PARAM[id]1</pagecontrol>
 					<viewtype label="$PARAM[list_name]">list</viewtype>
 					<itemlayout width="257">
@@ -447,6 +474,24 @@
 					<param name="focus_width" value="261"/>
 					<param name="focus_height" value="379"/>
 				</include>
+				<control type="button" id="10$PARAM[id]01">
+					<include>HiddenObject</include>
+					<onfocus>SetFocus($PARAM[id])</onfocus>
+					<onfocus>$PARAM[onclick]</onfocus>
+					<onfocus>$PARAM[onclick2]</onfocus>
+					<onfocus>$PARAM[onclick3]</onfocus>
+					<onfocus>$PARAM[onclick4]</onfocus>
+					<onfocus>$PARAM[onclick5]</onfocus>
+					<onfocus>$PARAM[onclick6]</onfocus>
+					<onfocus>$PARAM[onclick7]</onfocus>
+					<onfocus>$PARAM[onclick8]</onfocus>
+					<onfocus>$PARAM[onclick9]</onfocus>
+					<onfocus>$PARAM[onclick10]</onfocus>
+					<onfocus condition="$PARAM[beforeclick]">Action(Select)</onfocus>
+					<onfocus>AlarmClock(clearClickHander,ClearProperty(clickHandler,home),00:01,silent)</onfocus>
+					<ondown>$PARAM[ondown]</ondown>
+					<onup>$PARAM[onup]</onup>
+				</control>
 				<control type="fixedlist" id="$PARAM[id]">
 					<visible>$PARAM[content_visible]</visible>
 					<include>FocusBounce</include>
@@ -530,6 +575,7 @@
 		<param name="sublabel">$VAR[SubListLabel]</param>
 		<param name="use_custom_content">true</param>
 		<param name="use_custom_onclick">false</param>
+		<param name="beforeclick">false</param>
 		<definition>
 			<control type="group" id="$PARAM[id]1">
 				<visible>$PARAM[visible]</visible>
@@ -546,18 +592,8 @@
 					<onright>noop</onright>
 					<onleft>900</onleft>
 					<onup>$PARAM[onup]</onup>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick2]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick3]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick4]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick5]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick6]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick7]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick8]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick9]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick10]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick11]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick12]</onclick>
+					<onclick condition="$PARAM[use_custom_onclick] + String.IsEmpty(Window(home).Property(clickHandler))">SetFocus(10$PARAM[id]01)</onclick>
+					<onclick condition="$PARAM[use_custom_onclick] + String.IsEmpty(Window(home).Property(clickHandler))">SetProperty(clickHandler,1,home)</onclick>
 					<itemlayout width="296">
 						<control type="group">
 							<left>70</left>
@@ -604,6 +640,7 @@
 		<param name="sublabel">$VAR[SubListLabel]</param>
 		<param name="use_custom_content">true</param>
 		<param name="use_custom_onclick">false</param>
+		<param name="beforeclick">false</param>
 		<param name="height">502</param>
 		<param name="layout">SquareLayout</param>
 		<param name="property_button">true</param>
@@ -627,6 +664,24 @@
 					<param name="focus_width" value="304"/>
 					<param name="focus_height" value="304"/>
 				</include>
+				<control type="button" id="10$PARAM[id]01">
+					<include>HiddenObject</include>
+					<onfocus>SetFocus($PARAM[id])</onfocus>
+					<onfocus>$PARAM[onclick]</onfocus>
+					<onfocus>$PARAM[onclick2]</onfocus>
+					<onfocus>$PARAM[onclick3]</onfocus>
+					<onfocus>$PARAM[onclick4]</onfocus>
+					<onfocus>$PARAM[onclick5]</onfocus>
+					<onfocus>$PARAM[onclick6]</onfocus>
+					<onfocus>$PARAM[onclick7]</onfocus>
+					<onfocus>$PARAM[onclick8]</onfocus>
+					<onfocus>$PARAM[onclick9]</onfocus>
+					<onfocus>$PARAM[onclick10]</onfocus>
+					<onfocus condition="$PARAM[beforeclick]">Action(Select)</onfocus>
+					<onfocus>AlarmClock(clearClickHander,ClearProperty(clickHandler,home),00:01,silent)</onfocus>
+					<ondown>$PARAM[ondown]</ondown>
+					<onup>$PARAM[onup]</onup>
+				</control>
 				<control type="fixedlist" id="$PARAM[id]">
 					<visible>$PARAM[content_visible]</visible>
 					<include>FocusBounce</include>
@@ -644,18 +699,8 @@
 					<onright>SetProperty(BounceRight,1,home)</onright>
 					<onright>noop</onright>
 					<onleft>900</onleft>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick2]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick3]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick4]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick5]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick6]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick7]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick8]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick9]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick10]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick11]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick12]</onclick>
+					<onclick condition="$PARAM[use_custom_onclick] + String.IsEmpty(Window(home).Property(clickHandler))">SetFocus(10$PARAM[id]01)</onclick>
+					<onclick condition="$PARAM[use_custom_onclick] + String.IsEmpty(Window(home).Property(clickHandler))">SetProperty(clickHandler,1,home)</onclick>
 					<pagecontrol>$PARAM[id]1</pagecontrol>
 					<viewtype label="$PARAM[list_name]">list</viewtype>
 					<itemlayout width="300">
@@ -975,6 +1020,7 @@
 		<param name="sublabel">$VAR[SubListLabel]</param>
 		<param name="use_custom_content">true</param>
 		<param name="use_custom_onclick">false</param>
+		<param name="beforeclick">false</param>
 		<definition>
 			<control type="group" id="$PARAM[id]1">
 				<visible>$PARAM[visible]</visible>
@@ -1082,18 +1128,8 @@
 					<onleft>900</onleft>
 					<onup>$PARAM[id]01</onup>
 					<include>ScrollTimeWidgets</include>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick2]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick3]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick4]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick5]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick6]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick7]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick8]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick9]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick10]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick11]</onclick>
-					<onclick condition="$PARAM[use_custom_onclick]">$PARAM[onclick12]</onclick>
+					<onclick condition="$PARAM[use_custom_onclick] + String.IsEmpty(Window(home).Property(clickHandler))">SetFocus(10$PARAM[id]01)</onclick>
+					<onclick condition="$PARAM[use_custom_onclick] + String.IsEmpty(Window(home).Property(clickHandler))">SetProperty(clickHandler,1,home)</onclick>
 					<itemlayout condition="String.IsEmpty(Skin.String(EPGar))" width="450">
 						<control type="group">
 							<left>70</left>

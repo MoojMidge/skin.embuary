@@ -15,7 +15,7 @@
 				<onleft>close</onleft>
 				<onright>close</onright>
 				<ondown>155</ondown>
-				<scrolltime>0</scrolltime>
+				<include>ScrollTime</include>
 				<itemlayout height="50"/>
 				<focusedlayout height="50"/>
 			</control>

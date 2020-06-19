@@ -68,7 +68,7 @@
 					<onright>303</onright>
 					<ondown>200</ondown>
 					<pagecontrol>60</pagecontrol>
-					<scrolltime>200</scrolltime>
+					<include>ScrollTime</include>
 					<itemlayout condition="String.IsEqual(Window.Property(groupname),mainmenu)" height="75" width="900">
 						<control type="image">
 							<height>75</height>

@@ -51,7 +51,7 @@
 						<onright>5</onright>
 						<ondown>500</ondown>
 						<pagecontrol>70</pagecontrol>
-						<scrolltime>200</scrolltime>
+						<include>ScrollTime</include>
 					</control>
 					<control type="button" id="10">
 						<include>DialogSettingsButton</include>
@@ -123,7 +123,7 @@
 						<onright>noop</onright>
 						<ondown>500</ondown>
 						<pagecontrol>60</pagecontrol>
-						<scrolltime>200</scrolltime>
+						<include>ScrollTime</include>
 					</control>
 					<control type="button" id="7">
 						<include>DialogSettingsButton</include>

@@ -32,7 +32,7 @@
 					<control type="label">
 						<right>440</right>
 						<height>60</height>
-						<label>$INFO[ListItem.Title]</label>
+						<label>$VAR[MainListLabel]</label>
 						<aligny>top</aligny>
 						<font>Reg37</font>
 					</control>
@@ -85,6 +85,14 @@
 								<property name="icon">&#xf230;</property>
 								<onclick>SendClick(11)</onclick>
 							</item>
+							<!-- Extras -->
+							<item>
+								<visible>String.IsEqual(Window(home).Property(HasExtras),true)</visible>
+								<label>Extras</label>
+								<property name="icon">&#xf9B2;</property>
+								<onclick>RunScript(context.item.extras)</onclick>
+								<onclick>Close</onclick>
+							</item>
 							<item>
 								<visible>!String.IsEmpty(ListItem.Plot) | !String.IsEmpty(Container(2001).ListItem.Label)</visible>
 								<label>$LOCALIZE[207]</label>
@@ -104,13 +112,43 @@
 								<onclick condition="String.IsEqual(ListItem.DBType,movie) + !String.IsEmpty(ListItem.IMDBNumber) + !String.StartsWith(ListItem.IMDBNumber,xx)">RunScript(script.embuary.info,call=movie,external_id=$INFO[ListItem.IMDBNumber])</onclick>
 								<onclick condition="String.IsEqual(ListItem.DBType,movie) + [String.IsEmpty(ListItem.IMDBNumber) | String.StartsWith(ListItem.IMDBNumber,xx)]">RunScript(script.embuary.info,call=movie,query='$ESCINFO[ListItem.Title]',year=$INFO[ListItem.Year])</onclick>
 							</item>
+							<!-- Mark as watched/unwatched -->
 							<item>
-								<visible>$EXP[HasEmbyContext] | $EXP[HasEmbyConContext] | $EXP[HasLibraryEditButton]</visible>
+								<label>$LOCALIZE[16101]</label>
+								<property name="icon">&#xfe6e;</property>
+								<include>InfoToggleWatchedAction</include>
+								<visible>!$EXP[IsWatched]</visible>
+							</item>
+							<item>
+								<label>$LOCALIZE[16102]</label>
+								<property name="icon">&#xfe6e;</property>
+								<property name="color">red</property>
+								<include>InfoToggleWatchedAction</include>
+								<visible>$EXP[IsWatched]</visible>
+							</item>
+							<item>
+								<!-- <visible>$EXP[HasEmbyContext] | $EXP[HasEmbyConContext] | $EXP[HasLibraryEditButton]</visible> -->
+								<visible>$EXP[HasEmbyContext] | $EXP[HasEmbyConContext]</visible>
 								<label>$LOCALIZE[31366]</label>
 								<property name="icon">&#xf1d8;</property>
-								<onclick condition="!$EXP[HasEmbyContext] + $EXP[HasLibraryEditButton]">SetFocus(4000)</onclick>
 								<onclick condition="$EXP[HasEmbyContext]">RunScript(special://home/addons/plugin.video.emby/context.py)</onclick>
 								<onclick condition="$EXP[HasEmbyConContext]">RunPlugin(plugin://plugin.video.embycon?mode=SHOW_MENU&amp;item_id=$INFO[ListItem.Property(id)])</onclick>
+							</item>
+							<item>
+								<visible>!$EXP[HasEmbyContext] + !$EXP[HasEmbyConContext] + $EXP[HasLibraryEditButton]</visible>
+								<label>$LOCALIZE[31366]</label>
+								<property name="icon">&#xf1d8;</property>
+								<onclick condition="!System.HasAddon(script.metadata.editor)">SetProperty(Context.1.Label,-)</onclick>
+								<onclick condition="System.HasAddon(script.metadata.editor)">SetProperty(Context.1.Label,$ADDON[script.metadata.editor 32000])</onclick>
+								<onclick condition="System.HasAddon(script.metadata.editor)">SetProperty(Context.1.BuiltIn,RunScript(script.metadata.editor,action=contextmenu))</onclick>
+								<onclick>SetProperty(Context.2.Label,$LOCALIZE[184])</onclick>
+								<onclick>SetProperty(Context.2.BuiltIn,SendClick(6))</onclick>
+								<onclick>SetProperty(Context.3.Label,$LOCALIZE[20413])</onclick>
+								<onclick>SetProperty(Context.3.BuiltIn,SendClick(10))</onclick>
+								<onclick condition="!System.HasAddon(plugin.video.youtube)">SetProperty(Context.4.Label,-)</onclick>
+								<onclick condition="System.HasAddon(plugin.video.youtube)">SetProperty(Context.4.Label,YouTube)</onclick>
+								<onclick condition="System.HasAddon(plugin.video.youtube)">SetProperty(Context.4.BuiltIn,RunScript(script.embuary.helper,action=goto,path='"plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Title]&amp;search_type=videos"',target=videos))</onclick>
+								<onclick>RunScript(script.embuary.helper,action=createcontext)</onclick>
 							</item>
 						</content>
 					</control>
@@ -157,7 +195,8 @@
 				<param name="headline" value="$INFO[ListItem.Set]"/>
 				<param name="sortby" value="year"/>
 				<param name="use_custom_onclick" value="true"/>
-				<param name="onclick" value="RunScript(script.embuary.helper,action=playitem,item='$ESCINFO[ListItem.Filenameandpath]')"/>
+				<param name="beforeclick" value="true"/>
+				<param name="onclick">RunScript(script.embuary.helper,action=refreshinfodialog)</param>
 				<param name="content" value="videodb://movies/sets/$INFO[ListItem.SetId]/?setid=$INFO[ListItem.SetId]"/>
 			</include>
 			<!-- Main actor movies -->
@@ -169,7 +208,8 @@
 				<param name="headline" value="$LOCALIZE[31334] $INFO[Container(202).ListItem.Property(searchstring)]"/>
 				<param name="sortby" value="random"/>
 				<param name="use_custom_onclick" value="true"/>
-				<param name="onclick" value="RunScript(script.embuary.helper,action=playitem,item='$ESCINFO[ListItem.Filenameandpath]')"/>
+				<param name="beforeclick" value="true"/>
+				<param name="onclick">RunScript(script.embuary.helper,action=refreshinfodialog)</param>
 				<param name="content" value="plugin://script.embuary.helper/?info=getitemsbyactor&amp;dbid=$INFO[ListItem.DBID]&amp;type=movie"/>
 			</include>
 			<!-- Director movies -->
@@ -181,7 +221,8 @@
 				<param name="headline" value="$LOCALIZE[31287] $INFO[Container(203).ListItem.Property(searchstring)]"/>
 				<param name="sortby" value="random"/>
 				<param name="use_custom_onclick" value="true"/>
-				<param name="onclick" value="RunScript(script.embuary.helper,action=playitem,item='$ESCINFO[ListItem.Filenameandpath]')"/>
+				<param name="beforeclick" value="true"/>
+				<param name="onclick">RunScript(script.embuary.helper,action=refreshinfodialog)</param>
 				<param name="content" value="plugin://script.embuary.helper/?info=getdirectedby&amp;dbid=$INFO[ListItem.DBID]"/>
 			</include>
 			<!-- More like this -->
@@ -193,7 +234,8 @@
 				<param name="limit" value="15"/>
 				<param name="sortby" value="random"/>
 				<param name="use_custom_onclick" value="true"/>
-				<param name="onclick" value="RunScript(script.embuary.helper,action=playitem,item='$ESCINFO[ListItem.Filenameandpath]')"/>
+				<param name="beforeclick" value="true"/>
+				<param name="onclick">RunScript(script.embuary.helper,action=refreshinfodialog)</param>
 				<param name="content" value="$VAR[InfoDialog_MoreLikeThis_Content]"/>
 			</include>
 			<!-- Media Info -->
@@ -329,12 +371,27 @@
 								<onclick condition="String.IsEqual(ListItem.DBType,tvshow)">RunScript(script.embuary.info,call=tv,dbid=$INFO[ListItem.DBID])</onclick>
 							</item>
 							<item>
-								<visible>$EXP[HasEmbyContext] | $EXP[HasEmbyConContext] | $EXP[HasLibraryEditButton]</visible>
+								<visible>$EXP[HasEmbyContext] | $EXP[HasEmbyConContext]</visible>
 								<label>$LOCALIZE[31366]</label>
 								<property name="icon">&#xf1d8;</property>
-								<onclick condition="!$EXP[HasEmbyContext] + $EXP[HasLibraryEditButton]">SetFocus(4000)</onclick>
 								<onclick condition="$EXP[HasEmbyContext]">RunScript(special://home/addons/plugin.video.emby/context.py)</onclick>
 								<onclick condition="$EXP[HasEmbyConContext]">RunPlugin(plugin://plugin.video.embycon?mode=SHOW_MENU&amp;item_id=$INFO[ListItem.Property(id)])</onclick>
+							</item>
+							<item>
+								<visible>!$EXP[HasEmbyContext] + !$EXP[HasEmbyConContext] + $EXP[HasLibraryEditButton]</visible>
+								<label>$LOCALIZE[31366]</label>
+								<property name="icon">&#xf1d8;</property>
+								<onclick condition="!System.HasAddon(script.metadata.editor)">SetProperty(Context.1.Label,-)</onclick>
+								<onclick condition="System.HasAddon(script.metadata.editor)">SetProperty(Context.1.Label,$ADDON[script.metadata.editor 32000])</onclick>
+								<onclick condition="System.HasAddon(script.metadata.editor)">SetProperty(Context.1.BuiltIn,RunScript(script.metadata.editor,action=contextmenu))</onclick>
+								<onclick>SetProperty(Context.2.Label,$LOCALIZE[184])</onclick>
+								<onclick>SetProperty(Context.2.BuiltIn,SendClick(6))</onclick>
+								<onclick>SetProperty(Context.3.Label,$LOCALIZE[20413])</onclick>
+								<onclick>SetProperty(Context.3.BuiltIn,SendClick(10))</onclick>
+								<onclick condition="!System.HasAddon(plugin.video.youtube)">SetProperty(Context.4.Label,-)</onclick>
+								<onclick condition="System.HasAddon(plugin.video.youtube)">SetProperty(Context.4.Label,YouTube)</onclick>
+								<onclick condition="System.HasAddon(plugin.video.youtube)">SetProperty(Context.4.BuiltIn,RunScript(script.embuary.helper,action=goto,path='"plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Title]&amp;search_type=videos"',target=videos))</onclick>
+								<onclick>RunScript(script.embuary.helper,action=createcontext)</onclick>
 							</item>
 						</content>
 					</control>
@@ -523,8 +580,9 @@
 				<param name="headline" value="$LOCALIZE[31002]"/>
 				<param name="limit" value="15"/>
 				<param name="sortby" value="random"/>
-				<param name="use_custom_onclick" value="String.StartsWith(ListItem.Path,plugin://plugin.video.embycon)"/>
-				<param name="onclick" value="RunScript(script.embuary.helper,action=goto,path='$ESCINFO[ListItem.Filenameandpath]',target=videos)"/>
+				<param name="use_custom_onclick" value="true"/>
+				<param name="beforeclick" value="true"/>
+				<param name="onclick">RunScript(script.embuary.helper,action=refreshinfodialog)</param>
 				<param name="content" value="$VAR[InfoDialog_MoreLikeThis_Content]"/>
 			</include>
 		</control>
