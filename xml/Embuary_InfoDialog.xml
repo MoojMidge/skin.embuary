@@ -370,6 +370,19 @@
 								<onclick condition="String.IsEqual(ListItem.DBType,tvshow)">RunScript(script.embuary.info,call=tv,dbid=$INFO[ListItem.DBID])</onclick>
 							</item>
 							<item>
+								<label>$LOCALIZE[16101]</label>
+								<property name="icon">&#xfe6e;</property>
+								<include>InfoToggleWatchedAction</include>
+								<visible>!$EXP[IsWatched]</visible>
+							</item>
+							<item>
+								<label>$LOCALIZE[16102]</label>
+								<property name="icon">&#xfe6e;</property>
+								<property name="color">red</property>
+								<include>InfoToggleWatchedAction</include>
+								<visible>$EXP[IsWatched]</visible>
+							</item>
+							<item>
 								<visible>$EXP[HasEmbyContext] | $EXP[HasEmbyConContext]</visible>
 								<label>$LOCALIZE[31366]</label>
 								<property name="icon">&#xf1d8;</property>
@@ -592,10 +605,23 @@
 								<visible>System.HasAddon(script.embuary.info)</visible>
 								<label>TMDb</label>
 								<property name="icon">&#xF64E;</property>
-								<onclick>RunScript(script.embuary.info,call=tv,query=$INFO[ListItem.TVShowTitle])</onclick>
+								<onclick>RunScript(script.embuary.info,call=tv,query=$INFO[ListItem.TVShowTitle]$INFO[ListItem.Title, - ])</onclick>
 							</item>
 							<item>
-								<visible>$EXP[HasEmbyContext] | $EXP[HasLibraryEditButton] | $EXP[HasEmbyConContext]</visible>
+								<label>$LOCALIZE[16101]</label>
+								<property name="icon">&#xfe6e;</property>
+								<include>InfoToggleWatchedAction</include>
+								<visible>!$EXP[IsWatched]</visible>
+							</item>
+							<item>
+								<label>$LOCALIZE[16102]</label>
+								<property name="icon">&#xfe6e;</property>
+								<property name="color">red</property>
+								<include>InfoToggleWatchedAction</include>
+								<visible>$EXP[IsWatched]</visible>
+							</item>
+							<item>
+								<visible>$EXP[HasEmbyContext] | $EXP[HasEmbyConContext]</visible>
 								<label>$LOCALIZE[31366]</label>
 								<property name="icon">&#xf1d8;</property>
 								<onclick condition="!$EXP[HasEmbyContext] + $EXP[HasLibraryEditButton]">SetFocus(4000)</onclick>
