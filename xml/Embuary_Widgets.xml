@@ -120,6 +120,7 @@
 				</control>
 				<control type="fixedlist" id="$PARAM[id]">
 					<visible>$PARAM[content_visible]</visible>
+					<autoscroll time="5000">[!Control.HasFocus($PARAM[id]) | System.IdleTime(10)] + !Player.HasMedia + !System.ScreenSaverActive + !Container($PARAM[id]).IsUpdating</autoscroll>
 					<include>FocusBounce</include>
 					<movement>4</movement>
 					<top>30</top>
@@ -250,6 +251,7 @@
 				</control>
 				<control type="fixedlist" id="$PARAM[id]">
 					<visible>$PARAM[content_visible]</visible>
+					<autoscroll time="5000">[!Control.HasFocus($PARAM[id]) | System.IdleTime(10)] + !Player.HasMedia + !System.ScreenSaverActive + !Container($PARAM[id]).IsUpdating</autoscroll>
 					<include>FocusBounce</include>
 					<movement>3</movement>
 					<top>30</top>
@@ -384,6 +386,7 @@
 				</control>
 				<control type="fixedlist" id="$PARAM[id]">
 					<visible>$PARAM[content_visible]</visible>
+					<autoscroll time="5000">[!Control.HasFocus($PARAM[id]) | System.IdleTime(10)] + !Player.HasMedia + !System.ScreenSaverActive + !Container($PARAM[id]).IsUpdating</autoscroll>
 					<include>FocusBounce</include>
 					<movement>6</movement>
 					<top>30</top>
@@ -696,6 +699,7 @@
 				</control>
 				<control type="fixedlist" id="$PARAM[id]">
 					<visible>$PARAM[content_visible]</visible>
+					<autoscroll time="5000">[!Control.HasFocus($PARAM[id]) | System.IdleTime(10)] + !Player.HasMedia + !System.ScreenSaverActive + !Container($PARAM[id]).IsUpdating</autoscroll>
 					<include>FocusBounce</include>
 					<movement>5</movement>
 					<top>30</top>
@@ -1118,6 +1122,7 @@
 				</include>
 				<control type="fixedlist" id="$PARAM[id]">
 					<include>FocusBounce</include>
+					<autoscroll time="5000">[!Control.HasFocus($PARAM[id]) | System.IdleTime(10)] + !Player.HasMedia + !System.ScreenSaverActive + !Container($PARAM[id]).IsUpdating</autoscroll>
 					<top>150</top>
 					<width>100%</width>
 					<include condition="String.IsEmpty(Skin.String(EPGar))" content="ParamMovement">
