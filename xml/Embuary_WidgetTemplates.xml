@@ -558,7 +558,7 @@
 			<param name="mainlabel" value="$VAR[MainListLabel]"/>
 			<param name="thumblabel" value="$INFO[ListItem.Channelname]"/>
 			<param name="sublabel" value="$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ]"/>
-			<param name="content" value="pvr://channels/tv/*?refresh=$VAR[RefreshEPG]"/>
+			<param name="content" value="pvr://channels/tv/F2A?refresh=$VAR[RefreshEPG]"/>
 		</include>
 	</include>
 	<include name="W_RecentPVR">
