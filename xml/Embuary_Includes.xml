@@ -241,7 +241,7 @@
 							<ondown>6673</ondown>
 							<onleft>900</onleft>
 							<onclick>Info</onclick>
-							<content limit="1">plugin://script.embuary.helper/?info=getbydbid&amp;$VAR[BackgroundPath]</content>
+							<content limit="1">$VAR[BackgroundPath,plugin://script.embuary.helper/?info=getbydbid&amp;]</content>
 						</control>
 					</control>
 				</control>
