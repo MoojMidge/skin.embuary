@@ -624,9 +624,24 @@
 								<visible>$EXP[HasEmbyContext] | $EXP[HasEmbyConContext]</visible>
 								<label>$LOCALIZE[31366]</label>
 								<property name="icon">&#xf1d8;</property>
-								<onclick condition="!$EXP[HasEmbyContext] + $EXP[HasLibraryEditButton]">SetFocus(4000)</onclick>
 								<onclick condition="$EXP[HasEmbyContext]">RunScript(special://home/addons/plugin.video.emby/context.py)</onclick>
 								<onclick condition="$EXP[HasEmbyConContext]">RunPlugin(plugin://plugin.video.embycon?mode=SHOW_MENU&amp;item_id=$INFO[ListItem.Property(id)])</onclick>
+							</item>
+							<item>
+								<visible>!$EXP[HasEmbyContext] + !$EXP[HasEmbyConContext] + $EXP[HasLibraryEditButton]</visible>
+								<label>$LOCALIZE[31366]</label>
+								<property name="icon">&#xf1d8;</property>
+								<onclick condition="!System.HasAddon(script.metadata.editor)">SetProperty(Context.1.Label,-)</onclick>
+								<onclick condition="System.HasAddon(script.metadata.editor)">SetProperty(Context.1.Label,$ADDON[script.metadata.editor 32000])</onclick>
+								<onclick condition="System.HasAddon(script.metadata.editor)">SetProperty(Context.1.BuiltIn,RunScript(script.metadata.editor,action=contextmenu))</onclick>
+								<onclick>SetProperty(Context.2.Label,$LOCALIZE[184])</onclick>
+								<onclick>SetProperty(Context.2.BuiltIn,SendClick(6))</onclick>
+								<onclick>SetProperty(Context.3.Label,$LOCALIZE[20413])</onclick>
+								<onclick>SetProperty(Context.3.BuiltIn,SendClick(10))</onclick>
+								<onclick condition="!System.HasAddon(plugin.video.youtube)">SetProperty(Context.4.Label,-)</onclick>
+								<onclick condition="System.HasAddon(plugin.video.youtube)">SetProperty(Context.4.Label,YouTube)</onclick>
+								<onclick condition="System.HasAddon(plugin.video.youtube)">SetProperty(Context.4.BuiltIn,RunScript(script.embuary.helper,action=goto,path='"plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Title]&amp;search_type=videos"',target=videos))</onclick>
+								<onclick>RunScript(script.embuary.helper,action=createcontext)</onclick>
 							</item>
 						</content>
 					</control>
@@ -934,12 +949,27 @@
 									<onclick>RunScript(script.embuary.helper,action=textviewer,header='$ESCINFO[ListItem.Label]',message='$ESCINFO[ListItem.Property(Artist_Description)]')</onclick>
 								</item>
 								<item>
-									<visible>$EXP[HasEmbyContext] | $EXP[HasLibraryEditButton] | $EXP[HasEmbyConContext]</visible>
+									<visible>$EXP[HasEmbyContext] | $EXP[HasEmbyConContext]</visible>
 									<label>$LOCALIZE[31366]</label>
 									<property name="icon">&#xf1d8;</property>
-									<onclick condition="!$EXP[HasEmbyContext] + $EXP[HasLibraryEditButton]">SetFocus(4000)</onclick>
 									<onclick condition="$EXP[HasEmbyContext]">RunScript(special://home/addons/plugin.video.emby/context.py)</onclick>
 									<onclick condition="$EXP[HasEmbyConContext]">RunPlugin(plugin://plugin.video.embycon?mode=SHOW_MENU&amp;item_id=$INFO[ListItem.Property(id)])</onclick>
+								</item>
+								<item>
+									<visible>!$EXP[HasEmbyContext] + !$EXP[HasEmbyConContext] + $EXP[HasLibraryEditButton]</visible>
+									<label>$LOCALIZE[31366]</label>
+									<property name="icon">&#xf1d8;</property>
+									<onclick condition="!System.HasAddon(script.metadata.editor)">SetProperty(Context.1.Label,-)</onclick>
+									<onclick condition="System.HasAddon(script.metadata.editor)">SetProperty(Context.1.Label,$ADDON[script.metadata.editor 32000])</onclick>
+									<onclick condition="System.HasAddon(script.metadata.editor)">SetProperty(Context.1.BuiltIn,RunScript(script.metadata.editor,action=contextmenu))</onclick>
+									<onclick>SetProperty(Context.2.Label,$LOCALIZE[184])</onclick>
+									<onclick>SetProperty(Context.2.BuiltIn,SendClick(6))</onclick>
+									<onclick>SetProperty(Context.3.Label,$LOCALIZE[20413])</onclick>
+									<onclick>SetProperty(Context.3.BuiltIn,SendClick(10))</onclick>
+									<onclick condition="!System.HasAddon(plugin.video.youtube)">SetProperty(Context.4.Label,-)</onclick>
+									<onclick condition="System.HasAddon(plugin.video.youtube)">SetProperty(Context.4.Label,YouTube)</onclick>
+									<onclick condition="System.HasAddon(plugin.video.youtube)">SetProperty(Context.4.BuiltIn,RunScript(script.embuary.helper,action=goto,path='"plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Title]&amp;search_type=videos"',target=videos))</onclick>
+									<onclick>RunScript(script.embuary.helper,action=createcontext)</onclick>
 								</item>
 							</content>
 						</control>
