@@ -2,6 +2,7 @@
 <window>
 	<defaultcontrol always="true">5550</defaultcontrol>
 	<include>PropertyIncludes</include>
+	<onload>RunScript(script.amlogic.displayinfo)</onload>
 	<onload condition="!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)">close</onload>
 	<onload>Dialog.Close(fullscreeninfo)</onload>
 	<onload>Dialog.Close(videoosd)</onload>
@@ -22,7 +23,7 @@
 			<include content="Dialog_PopupOpenClose">
 				<param name="center" value="auto"/>
 			</include>
-			<width>820</width>
+			<width>65%</width>
 			<orientation>vertical</orientation>
 			<height>auto</height>
 			<itemgap>0</itemgap>
@@ -150,9 +151,10 @@
 			<!-- Video -->
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$LOCALIZE[13287] $INFO[System.ScreenWidth]x$INFO[System.ScreenHeight,, px]$INFO[System.FPS,  , FPS]</label>
+				<label>$LOCALIZE[13287] $INFO[Window(10000).Property(amlogic.hdmitx.displaymode)]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5552)</visible>
+				<visible>Player.HasVideo</visible>
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
@@ -163,7 +165,14 @@
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$INFO[Player.Process(pixformat),$LOCALIZE[31047]: ]</label>
+				<label>$LOCALIZE[31047]: $INFO[Window(10000).Property(amlogic.hdmitx.colourdepth)], $INFO[Window(10000).Property(amlogic.hdmitx.colourspace)]</label>
+				<onclick>noop</onclick>
+				<visible>Control.HasFocus(5552)</visible>
+				<visible>Player.HasVideo</visible>
+			</control>
+			<control type="button">
+				<include content="PlayerProcessButton"/>
+				<label>EOTF & Gamut: $INFO[Window(10000).Property(amlogic.hdmitx.eotf)], $INFO[Window(10000).Property(amlogic.hdmitx.colourimetry)]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5552)</visible>
 				<visible>Player.HasVideo</visible>
@@ -191,7 +200,7 @@
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$LOCALIZE[31049]: $INFO[Player.Process(videofps),, FPS]</label>
+				<label>$LOCALIZE[31049]: $INFO[Player.Process(videofps),, FPS] $INFO[System.FPS,(, FPS)]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5552)</visible>
 				<visible>Player.HasVideo</visible>
