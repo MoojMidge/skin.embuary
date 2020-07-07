@@ -166,7 +166,6 @@
 						<aligny>top</aligny>
 						<label>$VAR[SetViewPlot]</label>
 						<font>Light24</font>
-						<autoscroll>false</autoscroll>
 					</control>
 					<!-- video meta-->
 					<control type="group">
@@ -409,7 +408,6 @@
 						<aligny>top</aligny>
 						<label>$INFO[ListItem.Plot]</label>
 						<font>Light24</font>
-						<autoscroll>false</autoscroll>
 					</control>
 					<!-- video meta-->
 					<control type="group">
@@ -510,7 +508,6 @@
 						<aligny>top</aligny>
 						<label>$INFO[ListItem.Plot]</label>
 						<font>Light24</font>
-						<autoscroll>false</autoscroll>
 					</control>
 					<control type="label">
 						<height>20</height>
@@ -720,7 +717,6 @@
 						<aligny>top</aligny>
 						<label>$VAR[SetViewPlot]</label>
 						<font>Light24</font>
-						<autoscroll>false</autoscroll>
 					</control>
 					<!-- video meta-->
 					<control type="group">
@@ -825,7 +821,6 @@
 						<aligny>top</aligny>
 						<label>$INFO[ListItem.Plot]</label>
 						<font>Light24</font>
-						<autoscroll>false</autoscroll>
 					</control>
 					<control type="label">
 						<height>15</height>
@@ -925,7 +920,6 @@
 					<width>100%</width>
 					<height max="760">auto</height>
 					<font>PopUpText</font>
-					<autoscroll>false</autoscroll>
 					<align>center</align>
 					<aligny>top</aligny>
 					<pagecontrol>3000</pagecontrol>
@@ -1138,7 +1132,6 @@
 							<aligny>top</aligny>
 							<label>$VAR[ArtistInfoPlot]</label>
 							<font>Light24</font>
-							<autoscroll>false</autoscroll>
 						</control>
 					</control>
 				</control>
