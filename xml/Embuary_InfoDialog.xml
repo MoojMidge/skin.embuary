@@ -99,12 +99,12 @@
 								<property name="icon">&#xf9a9;</property>
 								<onclick>RunScript(script.embuary.helper,action=textviewer,header='$ESCINFO[ListItem.Title]',message='$ESCINFO[ListItem.Plot]')</onclick>
 							</item>
-							<item>
+							<!-- <item>
 								<visible>System.HasAddon(plugin.video.youtube)</visible>
 								<label>YouTube</label>
 								<property name="icon">&#xf5c3;</property>
 								<onclick>RunScript(script.embuary.helper,action=goto,path='"plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.Title]&amp;search_type=videos"',target=videos)</onclick>
-							</item>
+							</item> -->
 							<item>
 								<visible>System.HasAddon(script.embuary.info)</visible>
 								<label>TMDb</label>
@@ -352,17 +352,23 @@
 								<visible>!String.IsEmpty(ListItem.DBID) + String.IsEqual(ListItem.DBType,tvshow)</visible>
 							</item>
 							<item>
+								<visible>!String.IsEmpty(ListItem.Trailer)</visible>
+								<label>$LOCALIZE[20410]</label>
+								<property name="icon">&#xf230;</property>
+								<onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
+							</item>
+							<item>
 								<visible>!String.IsEmpty(ListItem.Plot)</visible>
 								<label>$LOCALIZE[207]</label>
 								<property name="icon">&#xf9a9;</property>
 								<onclick>RunScript(script.embuary.helper,action=textviewer,header='$ESCINFO[ListItem.TVShowTitle]',message='$ESCVAR[TinyInfoDialogPlot]')</onclick>
 							</item>
-							<item>
+							<!-- <item>
 								<visible>System.HasAddon(plugin.video.youtube)</visible>
 								<label>YouTube</label>
 								<property name="icon">&#xf5c3;</property>
 								<onclick>RunScript(script.embuary.helper,action=goto,path='"plugin://plugin.video.youtube/kodion/search/query/?q=$INFO[ListItem.TVShowTitle]&amp;search_type=videos"',target=videos)</onclick>
-							</item>
+							</item> -->
 							<item>
 								<visible>System.HasAddon(script.embuary.info)</visible>
 								<label>TMDb</label>
