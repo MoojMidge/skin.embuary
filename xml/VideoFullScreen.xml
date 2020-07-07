@@ -93,7 +93,7 @@
 					<right>30</right>
 					<bottom>75</bottom>
 					<control type="label" id="99">
-						<width>100</width>
+						<width>129</width>
 						<height>50</height>
 						<aligny>center</aligny>
 						<align>left</align>
@@ -103,7 +103,7 @@
 						<visible>!String.IsEmpty(Player.Time)</visible>
 					</control>
 					<control type="label" id="99">
-						<width>100</width>
+						<width>129</width>
 						<right>0</right>
 						<height>50</height>
 						<align>right</align>

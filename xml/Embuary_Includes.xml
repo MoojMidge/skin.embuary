@@ -941,8 +941,8 @@
 	<!-- Player progress bar dimensions -->
 	<include name="PlayerProgressDimension">
 		<centertop>50%</centertop>
-		<left>119</left>
-		<right>119</right>
+		<left>144</left>
+		<right>144</right>
 		<height>5</height>
 		<reveal>true</reveal>
 		<righttexture></righttexture>

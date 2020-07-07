@@ -15,8 +15,8 @@
 				<visible>Player.Forwarding | Player.Rewinding | $EXP[PlayerSeek]</visible>
 				<visible>!VideoPlayer.HasEpg</visible>
 				<bottom>39</bottom>
-				<left>349</left>
-				<right>149</right>
+				<left>374</left>
+				<right>174</right>
 				<height>8</height>
 				<orientation>horizontal</orientation>
 				<texturesliderbar colordiffuse="00ffffff">common/white.jpg</texturesliderbar>
@@ -27,8 +27,8 @@
 				<visible>Player.Forwarding | Player.Rewinding | $EXP[PlayerSeek]</visible>
 				<visible>VideoPlayer.HasEpg</visible>
 				<bottom>39</bottom>
-				<left>349</left>
-				<right>149</right>
+				<left>374</left>
+				<right>174</right>
 				<height>8</height>
 				<orientation>horizontal</orientation>
 				<texturesliderbar colordiffuse="00ffffff">common/white.jpg</texturesliderbar>
@@ -41,8 +41,8 @@
 				<include condition="VideoPlayer.HasEpg" content="OSD_Seek_Position">
 					<param name="id" value="402"/>
 				</include>
-				<left>349</left>
-				<right>149</right>
+				<left>374</left>
+				<right>174</right>
 				<bottom>60</bottom>
 				<width>158</width>
 				<height>70</height>
