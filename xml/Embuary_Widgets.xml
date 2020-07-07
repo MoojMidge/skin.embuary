@@ -7,7 +7,19 @@
 		<param name="left">70</param>
 		<definition>
 			<control type="group">
-				<visible>[Container($PARAM[id]).IsUpdating | $EXP[OnLibaryUpdate]] + !Integer.IsGreater(Container($PARAM[id]).NumItems,0)</visible>
+				<visible>Skin.HasSetting(MinimalFocusAnimation) + [[Container($PARAM[id]).IsUpdating | $EXP[OnLibaryUpdate]] + !Integer.IsGreater(Container($PARAM[id]).NumItems,0)]</visible>
+				<control type="label">
+					<width>auto</width>
+					<left>70</left>
+					<font>Med23</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>LOADING...</label>
+					<textcolor>text_headline</textcolor>
+				</control>
+			</control>
+			<control type="group">
+				<visible>!Skin.HasSetting(MinimalFocusAnimation) + [[Container($PARAM[id]).IsUpdating | $EXP[OnLibaryUpdate]] + !Integer.IsGreater(Container($PARAM[id]).NumItems,0)]</visible>
 				<left>$PARAM[left]</left>
 				<top>$PARAM[top]</top>
 				<animation type="Conditional" reversible="false" condition="Control.HasFocus($PARAM[id])">
