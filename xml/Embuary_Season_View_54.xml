@@ -158,7 +158,6 @@
 							<aligny>top</aligny>
 							<label>$VAR[SetViewPlot]</label>
 							<font>Light24</font>
-							<autoscroll>false</autoscroll>
 						</control>
 					</control>
 					<!-- logo -->

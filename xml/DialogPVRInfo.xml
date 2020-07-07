@@ -148,7 +148,6 @@
 						<aligny>top</aligny>
 						<label fallback="31156">$VAR[PVRPlot]</label>
 						<font>Light24</font>
-						<autoscroll>false</autoscroll>
 					</control>
 				</control>
 			</control>

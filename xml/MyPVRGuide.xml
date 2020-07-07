@@ -604,7 +604,6 @@
 					<font>Light24</font>
 					<align>justify</align>
 					<label>$INFO[ListItem.Plot]</label>
-					<autoscroll>false</autoscroll>
 				</control>
 			</control>
 			<!-- View select -->

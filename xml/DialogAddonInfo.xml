@@ -151,7 +151,6 @@
 						<aligny>top</aligny>
 						<label>$INFO[ListItem.AddonSummary,[B],[/B][CR][CR]]$INFO[ListItem.AddonDisclaimer,,[CR][CR]]$INFO[ListItem.AddonDescription]</label>
 						<font>Light24</font>
-						<autoscroll>false</autoscroll>
 					</control>
 				</control>
 			</control>

@@ -592,7 +592,6 @@
 					<aligny>top</aligny>
 					<label fallback="19055">$INFO[Container(10051).ListItem.Tagline,[B],[/B][CR]]$INFO[Container(10051).ListItem.Plot]</label>
 					<font>Light24</font>
-					<autoscroll>false</autoscroll>
 				</control>
 			</control>
 		</definition>
@@ -609,7 +608,6 @@
 				<aligny>top</aligny>
 				<label fallback="19055">$INFO[Container(10051).ListItem.Property(Biography)]</label>
 				<font>Light24</font>
-				<autoscroll>false</autoscroll>
 			</control>
 		</definition>
 	</include>

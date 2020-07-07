@@ -110,7 +110,6 @@
 							<aligny>top</aligny>
 							<label>$INFO[VideoPlayer.Tagline,[B],[/B][CR]]$INFO[VideoPlayer.Plot]</label>
 							<font>Light24</font>
-							<autoscroll>false</autoscroll>
 						</control>
 						<!-- video meta-->
 						<control type="group">
@@ -200,7 +199,6 @@
 							<aligny>top</aligny>
 							<label>$INFO[VideoPlayer.Tagline,[B],[/B][CR]]$INFO[VideoPlayer.Plot]</label>
 							<font>Light24</font>
-							<autoscroll>false</autoscroll>
 						</control>
 						<!-- video meta-->
 						<control type="group">
@@ -426,7 +424,6 @@
 						<aligny>top</aligny>
 						<label fallback="31156">$VAR[PVRPlot]</label>
 						<font>Light24</font>
-						<autoscroll>false</autoscroll>
 					</control>
 				</control>
 			</control>

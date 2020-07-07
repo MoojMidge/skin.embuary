@@ -140,7 +140,6 @@
 							<aligny>top</aligny>
 							<label>$VAR[SetViewPlot]</label>
 							<font>Light24</font>
-							<autoscroll>false</autoscroll>
 						</control>
 						<!-- video meta-->
 						<control type="group">

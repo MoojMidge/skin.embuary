@@ -126,7 +126,7 @@
 					<height>30</height>
 					<label>$PARAM[mainlabel]</label>
 					<font>Reg23</font>
-					<scroll>true</scroll>
+					<scroll>$PARAM[focused] + Control.HasFocus($PARAM[id])</scroll>
 					<align>center</align>
 					<textoffsetx>$PARAM[textoffsetx]</textoffsetx>
 				</control>
@@ -137,7 +137,7 @@
 					<label>$PARAM[sublabel]</label>
 					<font>Reg23</font>
 					<textcolor>lightgrey</textcolor>
-					<scroll>true</scroll>
+					<scroll>$PARAM[focused] + Control.HasFocus($PARAM[id])</scroll>
 					<align>center</align>
 					<textoffsetx>$PARAM[textoffsetx]</textoffsetx>
 				</control>
@@ -1378,7 +1378,6 @@
 						<aligny>top</aligny>
 						<label fallback="19055">$INFO[ListItem.EpisodeName,, - ]$INFO[ListItem.Plot]</label>
 						<font>Light24</font>
-						<autoscroll>false</autoscroll>
 					</control>
 				</control>
 			</control>
