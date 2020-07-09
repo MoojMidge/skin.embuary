@@ -21,13 +21,13 @@
 		</definition>
 	</include>
 	<include name="ScrollTime">
-		<scrolltime tween="cubic" easing="out">450</scrolltime>
+		<scrolltime tween="cubic" easing="inout">300</scrolltime>
 	</include>
 	<include name="ScrollTimeWidgets">
-		<scrolltime tween="cubic" easing="out">450</scrolltime>
+		<scrolltime tween="cubic" easing="inout">300</scrolltime>
 	</include>
 	<include name="ScrollTimeWideWidgets">
-		<scrolltime tween="cubic" easing="out">855</scrolltime>
+		<scrolltime tween="cubic" easing="inout">570</scrolltime>
 	</include>
 	<include name="FullscreenDimensions">
 		<width>1920</width>

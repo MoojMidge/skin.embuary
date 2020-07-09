@@ -120,7 +120,7 @@
 				</control>
 				<control type="fixedlist" id="$PARAM[id]">
 					<visible>$PARAM[content_visible]</visible>
-					<autoscroll time="5000">[!Control.HasFocus($PARAM[id]) | System.IdleTime(10)] + !Player.HasMedia + !System.ScreenSaverActive + !Container($PARAM[id]).IsUpdating</autoscroll>
+					<autoscroll time="5000">[!Control.HasFocus($PARAM[id]) | System.IdleTime(30)] + System.IdleTime(10) + !Player.HasMedia + !System.ScreenSaverActive + !Container($PARAM[id]).IsUpdating</autoscroll>
 					<include>FocusBounce</include>
 					<movement>4</movement>
 					<top>30</top>
@@ -251,7 +251,7 @@
 				</control>
 				<control type="fixedlist" id="$PARAM[id]">
 					<visible>$PARAM[content_visible]</visible>
-					<autoscroll time="5000">[!Control.HasFocus($PARAM[id]) | System.IdleTime(10)] + !Player.HasMedia + !System.ScreenSaverActive + !Container($PARAM[id]).IsUpdating</autoscroll>
+					<autoscroll time="5000">[!Control.HasFocus($PARAM[id]) | System.IdleTime(30)] + System.IdleTime(10) + !Player.HasMedia + !System.ScreenSaverActive + !Container($PARAM[id]).IsUpdating</autoscroll>
 					<include>FocusBounce</include>
 					<movement>3</movement>
 					<top>30</top>
@@ -386,7 +386,7 @@
 				</control>
 				<control type="fixedlist" id="$PARAM[id]">
 					<visible>$PARAM[content_visible]</visible>
-					<autoscroll time="5000">[!Control.HasFocus($PARAM[id]) | System.IdleTime(10)] + !Player.HasMedia + !System.ScreenSaverActive + !Container($PARAM[id]).IsUpdating</autoscroll>
+					<autoscroll time="5000">[!Control.HasFocus($PARAM[id]) | System.IdleTime(30)] + System.IdleTime(10) + !Player.HasMedia + !System.ScreenSaverActive + !Container($PARAM[id]).IsUpdating</autoscroll>
 					<include>FocusBounce</include>
 					<movement>6</movement>
 					<top>30</top>
@@ -699,7 +699,7 @@
 				</control>
 				<control type="fixedlist" id="$PARAM[id]">
 					<visible>$PARAM[content_visible]</visible>
-					<autoscroll time="5000">[!Control.HasFocus($PARAM[id]) | System.IdleTime(10)] + !Player.HasMedia + !System.ScreenSaverActive + !Container($PARAM[id]).IsUpdating</autoscroll>
+					<autoscroll time="5000">[!Control.HasFocus($PARAM[id]) | System.IdleTime(30)] + System.IdleTime(10) + !Player.HasMedia + !System.ScreenSaverActive + !Container($PARAM[id]).IsUpdating</autoscroll>
 					<include>FocusBounce</include>
 					<movement>5</movement>
 					<top>30</top>
@@ -785,7 +785,7 @@
 					<orientation>horizontal</orientation>
 					<preloaditems>4</preloaditems>
 					<movement>5</movement>
-					<ondown>$PARAM[ondown]</ondown>s
+					<ondown>$PARAM[ondown]</ondown>
 					<onright>SetProperty(BounceRight,1,home)</onright>
 					<include content="Bounce_Right">
 						<param name="id">$PARAM[id]</param>
@@ -900,7 +900,7 @@
 					<orientation>horizontal</orientation>
 					<preloaditems>4</preloaditems>
 					<movement>6</movement>
-					<ondown>$PARAM[ondown]</ondown>s
+					<ondown>$PARAM[ondown]</ondown>
 					<onright>SetProperty(BounceRight,1,home)</onright>
 					<include content="Bounce_Right">
 						<param name="id">$PARAM[id]</param>
@@ -1122,7 +1122,7 @@
 				</include>
 				<control type="fixedlist" id="$PARAM[id]">
 					<include>FocusBounce</include>
-					<autoscroll time="5000">[!Control.HasFocus($PARAM[id]) | System.IdleTime(10)] + !Player.HasMedia + !System.ScreenSaverActive + !Container($PARAM[id]).IsUpdating</autoscroll>
+					<autoscroll time="5000">[!Control.HasFocus($PARAM[id]) | System.IdleTime(30)] + System.IdleTime(10) + !Player.HasMedia + !System.ScreenSaverActive + !Container($PARAM[id]).IsUpdating</autoscroll>
 					<top>150</top>
 					<width>100%</width>
 					<include condition="String.IsEmpty(Skin.String(EPGar))" content="ParamMovement">
@@ -1144,7 +1144,7 @@
 					<onright>noop</onright>
 					<onleft>900</onleft>
 					<onup>$PARAM[id]01</onup>
-					<include>ScrollTimeWidgets</include>
+					<include>ScrollTimeWideWidgets</include>
 					<onclick condition="$PARAM[use_custom_onclick] + String.IsEmpty(Window(home).Property(clickHandler))">SetFocus(10$PARAM[id]01)</onclick>
 					<onclick condition="$PARAM[use_custom_onclick] + String.IsEmpty(Window(home).Property(clickHandler))">SetProperty(clickHandler,1,home)</onclick>
 					<itemlayout condition="String.IsEmpty(Skin.String(EPGar))" width="450">
