@@ -1025,8 +1025,7 @@
 	</include>
 	<include name="InfoToggleWatchedAction">
 		<onclick condition="String.StartsWith(ListItem.Path,plugin://plugin.video.embycon) + !String.IsEmpty(ListItem.Property(id))">RunScript(plugin.video.embycon,0,?mode=TOGGLE_WATCHED&amp;item_id=$INFO[ListItem.Property(id)])</onclick>
-		<onclick condition="!String.StartsWith(ListItem.Path,plugin://plugin.video.embycon) + !String.IsEmpty(ListItem.DBID)">RunScript(script.embuary.helper,action=toggleplaycount,dbid=$INFO[ListItem.DBID],type=$INFO[ListItem.DBType])</onclick>
-		<onclick>RunScript(script.embuary.helper,action=refreshinfodialog,force=true)</onclick>
+		<onclick condition="!String.StartsWith(ListItem.Path,plugin://plugin.video.embycon) + !String.IsEmpty(ListItem.DBID)">RunScript(script.embuary.helper,action=toggleplaycount,dbid=$INFO[ListItem.DBID],type=$INFO[ListItem.DBType],info=true)</onclick>
 	</include>
 	<include name="SetPropertyOnFocus">
 		<control type="button">
