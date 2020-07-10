@@ -73,77 +73,77 @@
 			<!-- PVR -->
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$INFO[PVR.ActStreamServiceName,$LOCALIZE[19099]: ]</label>
+				<label>[COLOR $VAR[AccentColor]]$LOCALIZE[19099]:[/COLOR] $INFO[PVR.ActStreamServiceName]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5551)</visible>
 				<visible>VideoPlayer.Content(livetv)</visible>
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$INFO[PVR.ActStreamProviderName,$LOCALIZE[19101]: ]</label>
+				<label>[COLOR $VAR[AccentColor]]$LOCALIZE[19101]:[/COLOR] $INFO[PVR.ActStreamProviderName]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5551)</visible>
 				<visible>VideoPlayer.Content(livetv)</visible>
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$INFO[PVR.ActStreamClient,$LOCALIZE[19012]: ]</label>
+				<label>[COLOR $VAR[AccentColor]]$LOCALIZE[19012]:[/COLOR] $INFO[PVR.ActStreamClient]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5551)</visible>
 				<visible>VideoPlayer.Content(livetv)</visible>
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$INFO[PVR.ActStreamDevice,$LOCALIZE[19006]: ]</label>
+				<label>[COLOR $VAR[AccentColor]]$LOCALIZE[19006]:[/COLOR] $INFO[PVR.ActStreamDevice]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5551)</visible>
 				<visible>VideoPlayer.Content(livetv)</visible>
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$INFO[PVR.ActStreamStatus,$LOCALIZE[19007]: ]</label>
+				<label>[COLOR $VAR[AccentColor]]$LOCALIZE[19007]:[/COLOR] $INFO[PVR.ActStreamStatus]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5551)</visible>
 				<visible>VideoPlayer.Content(livetv)</visible>
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$INFO[PVR.ActStreamEncryptionName,$LOCALIZE[19015]: ]</label>
+				<label>[COLOR $VAR[AccentColor]]$LOCALIZE[19015]:[/COLOR] $INFO[PVR.ActStreamEncryptionName]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5551)</visible>
 				<visible>VideoPlayer.Content(livetv)</visible>
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$INFO[PVR.ActStreamBer,$LOCALIZE[19010]: ]</label>
+				<label>[COLOR $VAR[AccentColor]]$LOCALIZE[19010]:[/COLOR] $INFO[PVR.ActStreamBer]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5551)</visible>
 				<visible>VideoPlayer.Content(livetv)</visible>
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$INFO[PVR.ActStreamUnc,$LOCALIZE[19011]: ]</label>
+				<label>[COLOR $VAR[AccentColor]]$LOCALIZE[19011]:[/COLOR] $INFO[PVR.ActStreamUnc]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5551)</visible>
 				<visible>VideoPlayer.Content(livetv)</visible>
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$INFO[PVR.ActStreamMux,$LOCALIZE[19100]: ]</label>
+				<label>[COLOR $VAR[AccentColor]]$LOCALIZE[19100]:[/COLOR] $INFO[PVR.ActStreamMux]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5551)</visible>
 				<visible>VideoPlayer.Content(livetv)</visible>
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$INFO[PVR.ActStreamSignal,$LOCALIZE[19008]: ]</label>
+				<label>[COLOR $VAR[AccentColor]]$LOCALIZE[19008]:[/COLOR] $INFO[PVR.ActStreamSignal]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5551)</visible>
 				<visible>VideoPlayer.Content(livetv)</visible>
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$INFO[PVR.ActStreamSNR,$LOCALIZE[19009]: ]</label>
+				<label>[COLOR $VAR[AccentColor]]$LOCALIZE[19009]:[/COLOR] $INFO[PVR.ActStreamSNR]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5551)</visible>
 				<visible>VideoPlayer.Content(livetv)</visible>
@@ -151,100 +151,87 @@
 			<!-- Video -->
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$LOCALIZE[13287] $INFO[Window(10000).Property(amlogic.hdmitx.displaymode)]</label>
+				<label>[COLOR $VAR[AccentColor]]$LOCALIZE[13287]:[/COLOR] $INFO[Window(10000).Property(amlogic.hdmitx.displaymode)]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5552)</visible>
 				<visible>Player.HasVideo</visible>
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$INFO[Player.Process(videodecoder),$LOCALIZE[31046]: ]$VAR[VideoHWDecoder, (,)]</label>
+				<label>[COLOR $VAR[AccentColor]]$LOCALIZE[31046]:[/COLOR] $INFO[Player.Process(videodecoder)]$VAR[VideoHWDecoder, (,)]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5552)</visible>
 				<visible>Player.HasVideo</visible>
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$LOCALIZE[31047]: $INFO[Window(10000).Property(amlogic.hdmitx.colourdepth)], $INFO[Window(10000).Property(amlogic.hdmitx.colourspace)]</label>
+				<label>[COLOR $VAR[AccentColor]]$LOCALIZE[31047]:[/COLOR] $INFO[Window(10000).Property(amlogic.hdmitx.colourdepth)]$INFO[Window(10000).Property(amlogic.hdmitx.colourspace),$COMMA ]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5552)</visible>
 				<visible>Player.HasVideo</visible>
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>EOTF & Gamut: $INFO[Window(10000).Property(amlogic.hdmitx.eotf)], $INFO[Window(10000).Property(amlogic.hdmitx.colourimetry)]</label>
+				<label>[COLOR $VAR[AccentColor]]EOTF &amp; Gamut:[/COLOR] $INFO[Window(10000).Property(amlogic.hdmitx.eotf)]$INFO[Window(10000).Property(amlogic.hdmitx.colourimetry),$COMMA ]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5552)</visible>
 				<visible>Player.HasVideo</visible>
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$INFO[Player.Process(deintmethod),$LOCALIZE[31048]: ]</label>
+				<label>[COLOR $VAR[AccentColor]]$LOCALIZE[16038]:[/COLOR] $INFO[Player.Process(deintmethod)]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5552)</visible>
 				<visible>Player.HasVideo</visible>
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$LOCALIZE[21443]: $INFO[Player.Process(videowidth)]x$INFO[Player.Process(videoheight),, px]</label>
+				<label>[COLOR $VAR[AccentColor]]$LOCALIZE[38031]:[/COLOR] $INFO[Player.Process(videowidth),,x]$INFO[Player.Process(videoheight)]$INFO[Player.Process(videointerlace)]$INFO[Player.Process(videodar),$COMMA , AR]$INFO[Player.Process(videofps),$COMMA , FPS]$INFO[VideoPlayer.VideoBitrate,$COMMA , kb/s]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5552)</visible>
 				<visible>Player.HasVideo</visible>
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$LOCALIZE[21374]: $INFO[Player.Process(videodar),, AR]</label>
+				<label>[COLOR $VAR[AccentColor]]$LOCALIZE[460]:[/COLOR] $INFO[Player.Process(audiochannels)]$INFO[Player.Process(audiodecoder),$COMMA ]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz]$INFO[VideoPlayer.AudioBitrate,$COMMA , kb/s]</label>
+				<onclick>noop</onclick>
+				<visible>Control.HasFocus(5552)</visible>
+			</control>
+			<control type="button">
+				<include content="PlayerProcessButton"/>
+				<label>[COLOR $VAR[AccentColor]]System FPS:[/COLOR] $INFO[System.FPS,, FPS]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5552)</visible>
 				<visible>Player.HasVideo</visible>
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$LOCALIZE[31049]: $INFO[Player.Process(videofps),, FPS] $INFO[System.FPS,(, FPS)]</label>
-				<onclick>noop</onclick>
-				<visible>Control.HasFocus(5552)</visible>
-				<visible>Player.HasVideo</visible>
-			</control>
-			<control type="button">
-				<include content="PlayerProcessButton"/>
-				<label>$LOCALIZE[21444]: $INFO[Player.Process(audiochannels)]</label>
+				<label>[COLOR $VAR[AccentColor]]$LOCALIZE[31045]:[/COLOR] $INFO[system.memory(used)] / $INFO[system.memory(total)] $INFO[system.memory(used.percent),(,)]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5552)</visible>
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$LOCALIZE[460]: $INFO[Player.Process(audiodecoder)]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz]</label>
+				<label>[COLOR $VAR[AccentColor]]$LOCALIZE[13271]:[/COLOR] $INFO[System.CpuUsage]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5552)</visible>
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$LOCALIZE[460]: $INFO[Player.Process(audiochannels),,$COMMA ]$INFO[Player.Process(audiodecoder)]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz]</label>
+				<label>[COLOR $VAR[AccentColor]]$LOCALIZE[13284]:[/COLOR] $INFO[System.CpuFrequency]</label>
 				<onclick>noop</onclick>
 				<visible>Control.HasFocus(5552)</visible>
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$INFO[System.Memory(used.percent),$LOCALIZE[31045]: ]</label>
-				<onclick>noop</onclick>
-				<visible>Control.HasFocus(5552)</visible>
-			</control>
-			<control type="button">
-				<include content="PlayerProcessButton"/>
-				<label>$INFO[System.CpuUsage,$LOCALIZE[13271] ]</label>
-				<onclick>noop</onclick>
-				<visible>Control.HasFocus(5552)</visible>
-			</control>
-			<control type="button">
-				<include content="PlayerProcessButton"/>
-				<label>$INFO[System.CPUTemperature,$LOCALIZE[22011] ]</label>
+				<label>[COLOR $VAR[AccentColor]]$LOCALIZE[22011]:[/COLOR] $INFO[System.CPUTemperature]</label>
 				<onclick>noop</onclick>
 				<visible>!String.IsEqual(System.CPUTemperature,$LOCALIZE[10005])</visible>
 				<visible>Control.HasFocus(5552)</visible>
 			</control>
 			<control type="button">
 				<include content="PlayerProcessButton"/>
-				<label>$INFO[System.GPUTemperature,$LOCALIZE[22010] ]</label>
+				<label>[COLOR $VAR[AccentColor]]$LOCALIZE[22010]:[/COLOR] $INFO[System.GPUTemperature]</label>
 				<onclick>noop</onclick>
 				<visible>!String.IsEqual(System.GPUTemperature,$LOCALIZE[10005])</visible>
 				<visible>Control.HasFocus(5552)</visible>
