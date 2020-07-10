@@ -360,7 +360,7 @@
 					<include>Animation_ScrollbarIsVisible</include>
 					<bottom>0</bottom>
 					<height>58</height>
-					<width>450</width>
+					<width>650</width>
 					<right>20</right>
 					<orientation>horizontal</orientation>
 					<itemgap>20</itemgap>
