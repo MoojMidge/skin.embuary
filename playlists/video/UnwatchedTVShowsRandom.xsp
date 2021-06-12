@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <smartplaylist type="tvshows">
-    <name>Recently Updated TV Shows</name>
+    <name>Unwatched TV Shows (Random)</name>
     <match>all</match>
-    <rule field="playcount" operator="is">
+    <rule field="numwatched" operator="is">
         <value>0</value>
     </rule>
-    <limit>50</limit>
-    <order direction="descending">dateadded</order>
+    <rule field="inprogress" operator="false" />
+    <order>random</order>
 </smartplaylist>
